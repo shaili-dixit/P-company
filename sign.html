@@ -6,7 +6,7 @@
 <body>
      <div id="signbg">
     <div class="signup-form">
-
+        <a href="/index.html"><span>Go back your home</span></a>
         <h2>Sign Up</h2>
         <form id="signup-form">
             <label for="username">Username:</label>
@@ -17,12 +17,14 @@
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
-            <button type="button" id="submit-button">Submit</button>
+            <div class="btn">
+          <button type="button" id="submit-button">Submit</button>
+            <button type= "reset" class="btn" id="reset" >RESET</button>
+        </div>
         </form>
     </div>
 </div>
-    <script  >
+    <script src="/js/source.js" >
        document.addEventListener('DOMContentLoaded', function() {
     const signUpForm = document.getElementById('signup-form');
     const submitButton = document.getElementById('submit-button');

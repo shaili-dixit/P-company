@@ -7,8 +7,8 @@
 .header {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content:space-between;
     background-color: rgba(4, 18, 5, 0.822);
     color: white;
     padding:1px 1px 1px 0;
@@ -19,18 +19,25 @@
     left: 0;
 }
 .header img {
-    width: 200px;
-    height: 30px;
+    /* width: 200px; */
+    height: 40px;
     padding: 0;
+    
     margin: 4.5px 0 0 0;
     border-radius: 5px;
 }
-
+#searchInput{
+    width: 40%;
+    font-size: 20px;
+    height: 30px;
+    margin-top: 10px;
+}
 #navbar {
     display: flex;
     margin: 3px 10px 3px 0;
     padding: 3px 3px 3px 0 ;
     align-items: center;
+    
     justify-content: space-between;
     color: white;
     position: relative;
@@ -56,20 +63,12 @@
     list-style: none;
     justify-content: space-between;
 }
- .navibar li input{
-    font-size: larger;
-     width: 400px;
-    height: 30px; 
-    justify-content: space-between;
-}  
-.input {
-    height: 100%;
-    width: 100%;
-}
+ 
+ 
 .navibar li a {
     font-size: 20px;
     color: white;
-    padding: 10px;
+    /* padding: 10px; */
     text-decoration: none;
     display: flex; /* Use flex display to align text and icon horizontally */
     align-items: center; /* Vertically center the content */
@@ -78,6 +77,7 @@
 .navibar li a span {
      /* Add some spacing between text and icon */
     margin:5px 5px 5px 0 ;
+    
     padding: 5px 5px 5px 0;
 }
 .navibar li a span i{
@@ -100,22 +100,70 @@
     border-radius: 5px;
 
 }
+details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top:15px;
+}
+#searchIcon{
+    margin-top:15px;
+    padding: 2px; 
+}  
+/* Style the content inside the details element */
+details > div {
+    
+    padding: 10px;
+    border: 1px solid #333;
+}
 
+#learnmore{
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1602072917553-326e3e2f76dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3135&q=80');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:static;
+}
+#learnmore h1{
+margin-left: 35%;
+padding: 60px;
+font-size: 40px;
+font-weight: 700;
+}
+#learnmore h6{
+margin-left: 30%;
+padding: 20px;
+font-size: 28px;
+font-weight: 500;
+}
+#learnmore p{
+ 
+padding: 20px;
+font-size: 18px;
+font-weight: 500;
+}
 
 #buy {
      
     width: 100%;
     height: 100vh;
     padding: 100px 0;
-    margin:  0;
+    margin:0;
     background-size: cover;
-     background-image: url('/imag/background.jpeg');
-    background-position: bottom 25% left 0 right 0;
+     background-image: url('https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_20website_20cost.png?format=jpg&quality=90&v=1680107890&width=1024');
+    background-position: bottom 25% right 0;
 
     font-size: 40px;
     opacity: 0.8;
     background-repeat: no-repeat;
     background-attachment:static;
+  
+}
+#buy h2{
+margin: 20px 35%;
 }
 #buy a{
     text-decoration: none;
@@ -305,33 +353,34 @@ button:hover{
 }
 #sm-banner{
     display: flex;
-    justify-content: space-between;
-    
+   justify-content: space-between;
+   align-items: flex-start;
+    /* width: 100%; */
     /* flex-wrap: wrap; */
 }
 #sm-banner .banner-box{
-margin: 40px 40px;
+ 
 display: flex;
 font-size: 40px;
 flex-direction: column;
 align-items: flex-start;
 justify-content: center;
- padding: 30px;
+  
 background-image: url('https://static.vecteezy.com/system/resources/thumbnails/016/264/237/small/portrait-of-an-excited-beautiful-girl-wearing-dress-and-sunglasses-holding-shopping-bags-cheerful-young-woman-with-handbag-on-yellow-background-shopaholic-shopping-fashion-free-photo.jpg');
-min-width: 580px;
+ 
 height: 40vh;
 background-size: cover;
 }
 #sm-banner .banner-box:nth-child(2){
-    margin: 40px 40px;
+   
     display: flex;
     font-size: 40px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-     padding: 30px;
+  
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsRRAddzqVXeTSh60_hedZh1VOTFJBjZIih3FB2c-C-T859R8bkAXNMVrCvJVNO5_g9vk&usqp=CAU');
-    min-width: 580px;
+  
     height: 40vh;
     opacity: 0.9;
     background-size: cover;
@@ -361,7 +410,7 @@ background-size: cover;
     align-items: center;
     justify-content: space-between;
    
-    margin: 10px 12px;
+   /* width: 100%; */
 }
 #banner-3 .banner-box{
    
@@ -372,7 +421,7 @@ background-size: cover;
     justify-content: center;
      padding: 5px 10px;
     background-image: url('https://images.unsplash.com/photo-1534180003648-8f8d6c814cdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VtbWVyJTIwc3ByaW5nJTIwY2xvdGglMjBjb2xsZWN0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60');
-    min-width: 30%;
+    
     height: 30vh;
     background-size: cover;
     }
@@ -385,7 +434,7 @@ background-size: cover;
     justify-content: center;
      
     background-image: url('https://media.istockphoto.com/id/1152527286/photo/boutique-shoes-in-a-store.jpg?s=1024x1024&w=is&k=20&c=otWKoDPRjFO7J2B8uvpRJ9KSx_EPm_dVDANtxWrkQd8=');
-    min-width: 30%;
+    
     height: 30vh;
     background-size: cover;
     }
@@ -398,7 +447,7 @@ background-size: cover;
     justify-content: center;
      
     background-image: url('https://media.istockphoto.com/id/1317910493/photo/harrington-jacket-mockup-front-side-and-back-views.jpg?s=612x612&w=0&k=20&c=Nwt91mqrXRsQsCoCIsv0MK9d2PXR8yMwImQxHZsQgsE=');
-    min-width: 30%;
+   
     height: 30vh;
     background-size: cover;
     }
@@ -788,7 +837,7 @@ padding-bottom: 15px;
 
 
 #signbg {
-    background-image: url('https://images.unsplash.com/photo-1550275994-cdc89cd1948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80');
+    background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -797,11 +846,19 @@ padding-bottom: 15px;
     justify-content: center;
     align-items: center;
 }
-
+#signbg a{
+    text-decoration: none;
+}
+#signbg a span{
+    font-size: 20px ;
+    margin: 15px 20%;
+    border: 3px solid rgb(245, 179, 191);
+}
 /* Sign-up form styles */
 .signup-form {
     background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
-    width: 300px;
+    width: 400px;
+    height: 400px;
     padding: 20px;
     border-radius: 5px;
 }
@@ -812,7 +869,7 @@ padding-bottom: 15px;
 }
 
 .signup-form label {
-    display: block;
+    /* display: block; */
     margin-bottom: 8px;
 }
 
@@ -836,9 +893,16 @@ padding-bottom: 15px;
     font-size: 28px;
     cursor: pointer;
 }
+.btn{
+    display: flex;
+    justify-content: space-between;
 
+}
+#reset{
+    background-color: #df3535;
+}
 .signup-form button:hover {
-    background-color: rgba(255, 219, 192, 0.789);
+    background-color: rgba(110, 199, 22, 0.789);
     color: #1a1a1a;
 }
 /* Styles for the result message */
@@ -855,165 +919,61 @@ padding-bottom: 15px;
 }
 
 @media(max-width:799px){
+    .header {
+        width: 100%;
+        display: flex;
+         
      
+        justify-content:space-between;
+        background-color: rgba(4, 18, 5, 0.822);
+        color: white;
+       padding: 0;
+       margin: 0;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.912);
+            position:fixed;
+       
+    }
     #navbar {
         display: flex;
         flex-direction: column;
-        margin: 5px 10px 5px 0;
-        padding: 5px 5px 5px 0 ;
-        align-items: center;
-        justify-content: space-between;
-        color:#df3535;
-        position: fixed;
-         
-        border-radius: 5px;
-        transition: 0.3s;
+        
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+         position: fixed;
+         top: 0;
+         right: -300px;
+         height: 100vh;
+         width: 300px;
+         background-color: #1c100a;
+         box-shadow: 0 40px 60px rgb(0,0,0,0.1);
+         padding: 80px 0 0 10px;
+         transition: 0.3s;
+    }
+    #navbar.active{
+        right: 0;
     }
     .navibar li{
         margin-bottom: 25px;
     }
-    #mobile{
+    #mobile{ 
         display: flex;
         align-items: center;
-    } 
-    #mobile i{
-        color:#1a1a1a;
+    }  
+    #mobile i{ 
+        color:#4bb6bed0;
         font-size: 24px;
+        margin: 20px;
         padding-left: 20px;
         }
-    #close{
-            position: absolute;
-            top:30px;
-            color: #222;
+    #close{  position: absolute;
+            top: 30px;
+            display:inline;
             left: 30px;
+            color: white;
             font-size: 24px;
-
         }
-    #lg-bag{
-            display: none;
-        }  
-    #buy {
-      height: 70vh;
-      padding: 0 80px;
-      background-position:top 30% right 30% ;
-        }
-    #feature{
-justify-content: center;
-        }
-    #feature .fe-box{
-        margin: 15px 15px;
-    }
-    #product1 .product-container{
-        
-        justify-content: center;
-    }
-    #product1 .pro{ 
-        margin:15px;
-    }
-    #banner{
-        height: 20vh;
-    }
-    #sm-banner .banner-box{
-        min-width: 100%;
-        height: 30vh;
-    }
-    #banner-3{
-        padding: 0 40px;
-    }
-    #banner-3 .banner-box{
-        width:28% ;
-    }
-    #form-detail{
-        padding: 40px;
-    }
-}
-@media(max-width:477px){
-    .header{
-        padding: 10px 30px;
-    }
-    h1{
-        font-size: 38px;
-    }
-    h2{
-        font-size: 32px;
-    }
-    #buy{
-        padding: 0 20px;
-        background-position: 55%;
-    }
-     #feature{
-        justify-content: space-between;
-     }
-     #feature .fe-box{
-        width: 155px;
-        margin: 0 0 15px 0;
-     }
-     #product1 .pro{
-        width: 100%;
-     }
-     #banner {
-        height: 40vh;
-     }
-     #sm-banner .banner-box{
-        height: 40vh;
-     }
-     #sm-banner .banner-box:nth-child(2){
-        margin-top: 20px;
-     }
-     #banner-3{
-        padding: 0 20px;
-     }
-     #banner-3 .banner-box{
-      width: 100%;
-     }
-     #prodetails{
-        display: flex;
-        flex-direction: column;
-     }
-     #prodetails .single-pro-img{
-        width: 100%;
-        
-         margin-top: 0px;
-    }
-
-     #prodetails .single-pro-details{
-        width: 100%;  
-    }
-    #about-head{
-        flex-direction: column;
-    }
-    #about-head img{
-        width: 100%;
-    }
-    #about-head div{
-        padding-left: 0;
-    }
-    #contact-detail{
-        
-        flex-direction: column;
-       
-    }
-    #contact-detail .detail{
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    #contact-detail .map{
-        width: 100%;
-        
-    }
-    #form-detail{
-        margin: 10px;
-        padding: 30px 10px;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-    #cart-add{
-        flex-direction: column;
-    }
-    #coupon{
-        width: 100%;
-    }
-    #Subtotal{
-        width: 100%;
-    }
+       #lg-bag{
+        display: none;
+       }
 }

@@ -13,18 +13,28 @@
     <section class="header">
       
             <a href="#" > <img src="/imag/ logo.jpg" alt=""></a>
-            <a href="">Hi how are you</a>
-        
+             <details><summary>All</summary>
+                <div>
+                    <!-- Content of the dropdown -->
+                    <p>pants</p>
+                    <p>lower</p>
+                    <p>shirts</p>
+                    <p>T-SHIRTS</p>
+                    <p>top</p>
+                    <!-- Add more content if needed -->
+                </div>
+        </details>
+        <input type="text" id="searchInput" placeholder="Enter your search query">
+        <!-- Add a search icon -->
+        <span id="searchIcon" class="search-icon" onclick="performSearch()">&#128269;</span>
             <ul class="navibar" id="navbar">
-                <li> <span>All</span><i class="fa fa-caret-down"></i></li>
-                <li class="input"><input type="text" placeholder="search in P-COMPANY..."><i class="fa fa-search"></i></li>
-                <li><a href="/home.html" class="active"><span>home</span><i class="fa fa-home"></i></a></li>
+                <li><a href="/index.html" class="active"><span>home</span><i class="fa fa-home"></i></a></li>
                 <li><a href="/shop.html"><span>shop</span><i class="fa fa-shopping-cart"></i></a></li>
                 <li><a href="/about.html"><span>about</span><i class="fa fa-info-circle"></i></a></li>
                 <li><a href="/contact.html"><span>contact</span><i class="fa fa-envelope"></i></a></li>
                 <li><a href="/sign.html"><span>sign</span><i class="fa fa-user"></i></a></li>
                 <li  id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
-                <a href="#" id="close"><i class="fa fa-times"></i></a>
+                <i class="fa fa-times-circle" id="close"></i>
             </ul>
             
         <div id="mobile">
@@ -34,12 +44,13 @@
     </section>
     <section id="buy">
         <h2>super deals</h2>
-        <p>buy and get  70%off on each item</p>
+       <marquee  scrollmount="200000" width="70%" loop="-1"> <p>buy and get  70%off on each item</p></marquee>
         <h2>hurry up </h2>
        <a href="/shop.html"> <button>shop now</button></a>
       </section>
    
-    <section id ="feature">
+    <section id ="feature" class="section">
+      
         <div class="fe-box">
            <img src="/imag/spin-the-wheel-6873663_1280.webp" alt="">
            <h6>free spinnig</h6>
@@ -60,9 +71,9 @@
            <img src="/imag/ 24:7 support.jpg" alt="">
            <h6>24/7 support</h6>
         </div>
-        
+    
     </section>
-    <section id="product1" class="paddingforsect">
+    <section id="product1" class="section" > 
          <h2>FEATURE PRODUCT</h2>
          <div class="product-container">
             <div class="product" onclick="window.location.href='/singleproduct.html';">
@@ -187,12 +198,12 @@
             </div>
          </div>
     </section>
-    <section id="banner"> 
+    <section id="banner" class="section"> 
         <h4>repair services</h4>
         <h2>Up to 70%off all accesssories</h2>
        <a href="/shop.html"><button class="normal">explore more</button></a> 
     </section>
-    <section id="product1" class="paddingforsect">
+    <section id="product1" class="section">
         <h2>NEW ARRIVALS</h2>
         <div class="product-container">
             <div class="product" onclick="window.location.href='/singleproduct.html';">
@@ -338,8 +349,8 @@
              
         </div>
    </section>
-   <section id="sm-banner">
-    <div class="banner-box">
+   <section id="sm-banner" class="section">
+    <div class="banner-box" >
         <h4>Crazy deal </h4>
         <h2>Buy 1 and get 1 free</h2>
         <a href="/learn.html"><button class="normal">Learn More</button></a>
@@ -350,7 +361,7 @@
        <a href="/shop.html"> <button class="normal">Collection</button></a>
     </div>
    </section>
-   <section id="banner-3">
+   <section id="banner-3" class="section">
     <div class="banner-box">
         <h2> SEASONAL SALE</h2>
         <h3>WINTER COLLECTION -50%off</h3>
@@ -412,6 +423,8 @@
     </div>
    </footer>
 
-   <script  src="/js/source.js"></script>
+   <script src="/js/source.js">
+
+   </script>
 </body>
 </html>

@@ -83,6 +83,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
+const nav = document.getElementById('navbar');
+
+if (bar) {
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+    })
+}
+
+if (close) {
+    close.addEventListener('click', () => {
+        nav.classList.remove('active');
+    })
+}
 var mainimg = document.getElementById("product-image");
 var smallimg = document.getElementsByClassName('small-img');
 
@@ -102,26 +117,12 @@ smallimg[3].onclick = function () {
     mainimg.src = smallimg[3].src;
 };
 
+function performSearch() {
+    const searchInput = document.getElementById("searchInput");
+    const query = searchInput.value.trim();
 
-
-
-
-
-
-
-const bar = document.getElementById('bar');
-const close = document.getElementById('close');
-const nav = document.getElementById('navbar');
-
-if (bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-    });
+    if (query !== "") {
+        // Redirect to the search results page with the query as a parameter
+        window.location.href = `/shop.html?query=${encodeURIComponent(query)}`;
+    }
 }
-
-if (close) {
-    close.addEventListener('click', () => {
-        nav.classList.remove('active');
-    });
-}
- 
