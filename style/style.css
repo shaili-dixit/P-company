@@ -209,18 +209,7 @@ margin: 20px 35%;
     padding-bottom: 0;
     
 }
-.paddingforsect{
-    padding: 105px 0 0 0;
-    font-size: 40px;
-    
-}
-.paddingforsect h2{
-    padding: 1px ;
-    /* width :500px; */
-    display: inline-block;
-    border-radius: 15px;
-    background-color: aqua;
-}
+ 
 .fe-box h6 {
     line-height: 1;
     color: rgba(19, 19, 17, 0.56);
@@ -264,7 +253,7 @@ margin: 20px 35%;
 }
 #product1 .product:hover{
     border-radius: 35px;
-    box-shadow: 5px 5px 5px 5px rgba(226, 210, 210, 0.475);
+    box-shadow: 5px 5px 5px 1px rgba(226, 210, 210, 0.475);
 }
 #product1 .product{
     width: 23%;
@@ -278,6 +267,10 @@ margin: 20px 35%;
 
     box-shadow: 3px 3px 3px 3px rgba(226, 210, 210, 0.475);
     margin: 25px 20px;
+}
+#product1 h2{
+    font-size: 40px;
+    background-color: aqua;
 }
 #product1 .product a{
     text-decoration: none;
@@ -976,4 +969,8 @@ padding-bottom: 15px;
        #lg-bag{
         display: none;
        }
+       
+       #product1 .product-container  {
+    flex-direction: column;
+}
 }

@@ -8,7 +8,7 @@
         <!-- Result message will be displayed here -->
     </div>
 
-    <script src="/js/source.js" >
+    <script  >
         document.addEventListener('DOMContentLoaded', function() {
     // Get the message from the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -18,7 +18,7 @@
     const resultMessageElement = document.getElementById('result-message');
     resultMessageElement.textContent = decodeURIComponent(message);
     if (message=='Sign-up successful!'){
-        window.location.href = 'index.html?';
+        window.location.href = '/index.html?';
             }
 });
 
