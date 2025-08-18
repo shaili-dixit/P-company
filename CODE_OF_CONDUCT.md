@@ -1,27 +1,27 @@
 # 📜 Code of Conduct
 
 ## 🗂 Table of Contents
-- 🌟 [Our Pledge](#-our-pledge)
-- 🚦 [Our Standards](#-our-standards)
-- 👨‍⚖ [Enforcement Responsibilities](#-enforcement-responsibilities)
-- 🌐 [Scope](#-scope)
-- 🌈 [Our Community Values](#-our-community-values)
-- 📌 [Contribution Behavior](#-contribution-behavior)
-- 🛡 [Enforcement](#-enforcement)
-- 🤫 [Confidentiality & Non-Retaliation](#-confidentiality--non-retaliation)
-- 📖 [Enforcement Guidelines](#-enforcement-guidelines)
-- 📘 [Further Reading](#-further-reading)
-- 📜 [Attribution](#-attribution)
-- 🌟 [Conclusion](#-conclusion)
+- 🌟 [Our Pledge](#our-pledge)
+- 🚦 [Our Standards](#our-standards)
+- 👨‍⚖ [Enforcement Responsibilities](#enforcement-responsibilities)
+- 🌐 [Scope](#scope)
+- 🌈 [Our Community Values](#our-community-values)
+- 📌 [Contribution Behavior](#contribution-behavior)
+- 🛡 [Enforcement](#enforcement)
+- 🤫 [Confidentiality & Non-Retaliation](#confidentiality--non-retaliation)
+- 📖 [Enforcement Guidelines](#enforcement-guidelines)
+- 📘 [Further Reading](#further-reading)
+- 📜 [Attribution](#attribution)
+- 🌟 [Conclusion](#conclusion)
 
 ---
 
 ## 🌟 Our Pledge
-We, as contributors, maintainers, and participants of *P-company*, pledge to create a welcoming, safe, and inclusive environment for everyone. Participation in our project should be a harassment-free experience regardless of age, body size, visible or invisible disability, ethnicity, gender identity, level of experience, education, socio-economic status, nationality, personal appearance, race, or religion.
+We, as contributors, maintainers, and participants of P-company, pledge to create a welcoming, safe, and inclusive environment for everyone. Participation in our project should be a harassment-free experience regardless of age, body size, visible or invisible disability, ethnicity, gender identity, level of experience, education, socio-economic status, nationality, personal appearance, race, or religion.
 
 We commit to acting and interacting in ways that foster an open, respectful, and supportive community. Every voice and perspective is valued, and we encourage collaboration, mentorship, and knowledge-sharing among contributors. We listen actively and respond with empathy, while taking responsibility for our actions and learning from mistakes. Integrity, honesty, and professionalism guide all of our contributions and interactions.
 
-Together, we strive to create a vibrant, inclusive, and empowering environment where contributors feel inspired to share ideas, learn, and help others flourish. By following this pledge, we ensure that *P-company* remains a collaborative, supportive, and respectful space for all contributors.
+Together, we strive to create a vibrant, inclusive, and empowering environment where contributors feel inspired to share ideas, learn, and help others flourish. By following this pledge, we ensure that P-company remains a collaborative, supportive, and respectful space for all contributors.
 
 ---
 
@@ -44,8 +44,13 @@ They have the responsibility to manage contributions, discussions, and other pro
 
 ---
 
+## 🌐 Scope
+P-company’s Code of Conduct applies to all participants, including contributors, maintainers, moderators, and anyone interacting with the project’s resources, forums, or events.
+
+---
+
 ## 🌈 Our Community Values
-*P-company* thrives on the following shared values:
+P-company thrives on the following shared values:
 
 - 🤝 Respect – Every contributor’s voice matters.  
 - 💡 Curiosity – Questions and exploration are encouraged.  
@@ -69,7 +74,7 @@ All contributions should align with this Code of Conduct. Contributors are encou
 ---
 
 ## 🛡 Enforcement
-Concerns about inappropriate behavior can be reported confidentially to the *P-company team*.  
+Concerns about inappropriate behavior can be reported confidentially to the P-company team.  
 
 All reports are taken seriously and handled fairly to ensure the safety and well-being of all contributors.  
 
@@ -83,38 +88,43 @@ All reports will remain confidential. Retaliation against anyone who reports a c
 ## 📖 Enforcement Guidelines
 Project leaders will determine consequences based on the severity of the issue:
 
-1. *✏ Minor Issue*  
+1. ✏ *Minor Issue*  
    Impact: Small or unintentional behavior concerns.  
    Consequence: Private discussion and clarification; public apology may be requested if necessary.  
 
-2. *⚠ Warning*  
+2. ⚠ *Warning*  
    Impact: Clear violation or repeated minor issues.  
    Consequence: Official warning; temporary limitations on participation if repeated.  
 
-3. *⏳ Temporary Restriction*  
+3. ⏳ *Temporary Restriction*  
    Impact: Sustained inappropriate behavior.  
    Consequence: Temporary restriction from contributing.  
 
-4. *🚫 Permanent Restriction*  
+4. 🚫 *Permanent Restriction*  
    Impact: Severe or repeated violations, including harassment or hate speech.  
    Consequence: Permanent ban from project participation.  
 
 ---
 
 ## 📘 Further Reading
-To support your contributions, we encourage you to refer to our *CONTRIBUTING.md* guide. It provides detailed information on project workflow, coding standards, issue reporting, and best practices for collaboration.  
+To support your contributions, we encourage you to refer to our CONTRIBUTING.md guide. It provides detailed information on project workflow, coding standards, issue reporting, and best practices for collaboration.  
 
-Together with this Code of Conduct, the guide ensures that *P-company* remains a productive, respectful, and inclusive environment for all contributors.  
+Together with this Code of Conduct, the guide ensures that P-company remains a productive, respectful, and inclusive environment for all contributors.  
 
 Whether you are a first-time contributor or a returning participant, these resources are designed to help you contribute with clarity, confidence, and impact.  
 
 ---
 
+## 📜 Attribution
+This Code of Conduct template is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.  
+
+---
+
 ## 🌟 Conclusion
-By committing to this Code of Conduct, we collectively shape a *P-company* community where every contributor feels valued, heard, and empowered.  
+By committing to this Code of Conduct, we collectively shape a P-company community where every contributor feels valued, heard, and empowered.  
 
 This is more than rules—it is a commitment to kindness, integrity, and collaboration. Together, we foster an environment that celebrates learning, teamwork, and innovation.  
 
-Your actions define the community, and by upholding these standards, we ensure that *P-company* remains a safe, inclusive, and inspiring space for everyone involved.  
+Your actions define the community, and by upholding these standards, we ensure that P-company remains a safe, inclusive, and inspiring space for everyone involved.  
 
 Let’s build, contribute, and grow together.
