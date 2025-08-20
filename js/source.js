@@ -1,3 +1,85 @@
+// Cart Functions
+function displayCart() {
+    const cartTable = document.getElementById('cart-items');
+    const subtotalElement = document.getElementById('cart-subtotal');
+    const totalElement = document.getElementById('cart-total');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    let total = 0;
+    if (!cartTable) return; // Exit if we're not on the cart page
+    
+    cartTable.innerHTML = '';
+    
+    if (cart.length === 0) {
+        cartTable.innerHTML = '<tr><td colspan="6" style="text-align: center;"><p>Your cart is empty</p><p><a href="/shop.html">Continue Shopping</a></p></td></tr>';
+    } else {
+        cart.forEach((item, index) => {
+            const subtotal = item.price * item.quantity;
+            total += subtotal;
+            
+            cartTable.innerHTML += `
+                <tr>
+                    <td><button onclick="removeFromCart(${index})" style="
+                        background-color: #ff4444;
+                        color: white;
+                        border: none;
+                        padding: 5px 15px;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        transition: background-color 0.3s ease;
+                    ">Remove</button></td>
+                    <td><img src="${item.image}" alt="${item.title}" style="width: 60px;"></td>
+                    <td>${item.title}</td>
+                    <td>₹${item.price}</td>
+                    <td>
+                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" style="width: 50px;">
+                    </td>
+                    <td>₹${subtotal}</td>
+                </tr>
+            `;
+        });
+    }
+
+    if (subtotalElement) subtotalElement.textContent = '₹' + total;
+    if (totalElement) totalElement.textContent = '₹' + total;
+}
+
+function removeFromCart(index) {
+    try {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        displayCart(); // Refresh the cart display
+    } catch (error) {
+        console.error('Error removing item from cart:', error);
+    }
+}
+
+function updateQuantity(index, newQuantity) {
+    try {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart[index].quantity = Math.max(1, parseInt(newQuantity) || 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+        updateCartCount();
+    } catch (error) {
+        console.error('Error updating quantity:', error);
+    }
+}
+
+function proceedToCheckout() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert('Your cart is empty. Please add some items before checking out.');
+        return;
+    }
+    // Add checkout logic here
+    alert('Proceeding to checkout...');
+    // You can redirect to a checkout page or implement your checkout logic
+}
+
 // Products Data
 const products = {
     '1': {
