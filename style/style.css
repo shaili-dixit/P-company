@@ -454,31 +454,140 @@ background-size: cover;
         font-weight: 500;
         font-size: 20px;
     }
-footer{
+footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: rgb(165, 226, 243);
-    margin-left: 0;
-    margin-top: 35px;
-    font-size: 20px;
-    margin-right: 0;margin-bottom: 0;
-    /* border: 1px solid #e2e9e1; */
-    /* box-shadow: -5px 5px 5px ; */
+    background-color: #505252;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-size: 16px;
+    margin: 0;
+    font-family: 'Noto Serif', serif;
 }
-footer .col{
+
+footer .col {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     align-items: flex-start;
-    padding: 10px;
-    margin: 4.5px 10px;
+    padding: 0;
+    margin-right: 30px;
 }
-footer .col img{
-    width: 200px;
-    height: 40px;
+
+footer .col h4 {
+    color: #5bf8fd;
+    margin-bottom: 10px;
+}
+
+footer .col p,
+footer .col a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+footer .col a:hover {
+    text-decoration: underline;
+}
+
+footer .col .icon a {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+/* Base footer styling */
+footer .footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #ffffff;
+    padding: 10px;
+}
+
+/* Button container styling */
+.footer-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* General button styling */
+.btn {
+    color: #ffffff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+    transition: background-color 0.3s, outline-color 0.3s;
     border-radius: 5px;
 }
+
+/* Specific button styling */
+.sign-in {
+    background-color: #20b9bb; /* Adjusted to match earlier context */
+    outline: 2px solid #20b9bb;
+}
+
+.contact-us {
+    background-color: #808080;
+    outline: 2px solid #20b9bb; /* Adjusted to match Sign In background */
+}
+
+/* Hover effects */
+.btn:hover {
+    background-color: #666666;
+}
+
+.contact-us:hover {
+    background-color: #666666;
+    outline-color: #ffffff;
+}
+
+.sign-in:hover{
+    outline-color: #ffffff;
+}
+
+.follow{
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+footer .col .footer-logo {
+    width: 150px; /* Adjust this value to reduce size */
+    height: 50px; /* Maintain aspect ratio */
+    margin-bottom: 10px ;
+}
+
+footer .col p {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+footer .col i {
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+footer .col a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer .col a:hover {
+    text-decoration: underline;
+}
+
 .install .row img{
     border: #088178;;
     margin: 20px 0;
