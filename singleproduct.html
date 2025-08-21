@@ -10,6 +10,7 @@
      
 </head>
 <body>
+
      <section class="header">
     <a href="#"><img src="/imag/ logo.jpg" alt="Logo"></a>
        <!-- Dark/Light Mode Toggle -->
@@ -23,72 +24,154 @@
             <p>T-SHIRTS</p>
             <p>Top</p>
         </div>
+
     </details>
-
     <input type="text" id="searchInput" placeholder="Enter your search query">
+    <!-- Add a search icon -->
     <span id="searchIcon" class="search-icon" onclick="performSearch()">&#128269;</span>
-
-    <ul class="navibar" id="navbar">
-        <li><a href="/index.html"><span>Home</span><i class="fa fa-home"></i></a></li>
-        <li><a href="/shop.html"><span>Shop</span><i class="fa fa-shopping-cart"></i></a></li>
-        <li><a href="/about.html" class="active"><span>About</span><i class="fa fa-info-circle"></i></a></li>
-        <li><a href="/contact.html"><span>Contact</span><i class="fa fa-envelope"></i></a></li>
-        <li><a href="/sign.html"><span>Sign</span><i class="fa fa-user"></i></a></li>
-        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
-        <a href="#" id="close"><i class="fa fa-times"></i></a>
-    </ul>
-
+        <ul class="navibar" id="navbar">
+            <li><a href="/index.html" ><span>home</span><i class="fa fa-home"></i></a></li>
+            <li><a href="/shop.html" class="active"><span>shop</span><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="/about.html"><span>about</span><i class="fa fa-info-circle"></i></a></li>
+            <li><a href="/contact.html"><span>contact</span><i class="fa fa-envelope"></i></a></li>
+            <li><a href="/sign.html"><span>sign</span><i class="fa fa-user"></i></a></li>
+            <li  id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
+            <a href="#" id="close"><i class="fa fa-times"></i></a>
+        </ul>
+        
     <div id="mobile">
         <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
         <i id="bar" class="fa fa-outdent"></i>
     </div>
 </section>
-
     
 
-  <section id="prodetails" class="section">
+  <section id="prodetails">
     <div class="single-pro-img">
         <img id="product-image" src="" alt="Product">
         <h1 id="product-title">Product Title</h1>
-        <a href="/shop.html" class="back-to-shop"><span>Back to Shop</span></a>
-        
-        <div class="small-img-grp">
-            <div class="small-img-col">
-                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/r/g/s-cmb-po2-dab-wynk-smartees-original-imagm5vhumtz8epz.jpeg?q=70" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-t-shirt/c/f/2/m-st-brooklynhalfsleeve-black-smartees-original-imagph2fqzfy3yvk.jpeg?q=70" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/q/m/m-st-santa-black-smartees-original-imagqaxfbfgzthte.jpeg?q=70" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/n/t/x/l-wynk-black-hs-smartees-original-imaghqfa7agdzcar.jpeg?q=70" class="small-img" alt="">
+        <div class="product-details">
+            <h2>Product Details</h2>
+            <span id="product-price" class="price">₹ 999</span>
+            <div class="product-actions">
+                <input type="number" id="quantity" value="1" min="1">
+                                <button onclick="addToCartFromProduct()" class="normal">Add to Cart</button>
             </div>
         </div>
+        
+        <script src="/js/source.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('product');
+                const product = products[productId];
+                
+                if (product) {
+                    const priceElement = document.getElementById('product-price');
+                    if (priceElement) {
+                        priceElement.textContent = '₹' + product.price;
+                    }
+                }
+                updateCartCount();
+            });
+
+            function addToCartFromProduct() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('product');
+                const quantity = parseInt(document.getElementById('quantity').value) || 1;
+                
+                if (productId) {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const product = products[productId];
+                    
+                    if (product) {
+                        const existingItemIndex = cart.findIndex(item => item.id === productId);
+                        
+                        if (existingItemIndex >= 0) {
+                            cart[existingItemIndex].quantity += quantity;
+                        } else {
+                            cart.push({
+                                id: productId,
+                                title: product.title,
+                                image: product.image,
+                                price: product.price,
+                                quantity: quantity
+                            });
+                        }
+                        
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        window.location.href = '/cart.html';
+                    }
+                }
+            }
+        </script>
+        
+        <script>
+            function addToCartFromProduct() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('product');
+                const quantity = parseInt(document.getElementById('quantity').value) || 1;
+                
+                if (productId && products[productId]) {
+                    const product = products[productId];
+                    const existingItem = cart.find(item => item.id === productId);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            title: product.title,
+                            image: product.image,
+                            price: product.price || 999,
+                            quantity: quantity
+                        });
+                    }
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartCount();
+                    alert('Product added to cart!');
+                }
+            }
+        </script>
+        <a href="/shop.html"><span>Back to Shop </span></a>
+         
+        <div class="small-img-grp" >
+            <div class="small-img-col">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/r/g/s-cmb-po2-dab-wynk-smartees-original-imagm5vhumtz8epz.jpeg?q=70" class="small-img" width=100% alt="">
+            </div>
+        
+         
+            <div class="small-img-col">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-t-shirt/c/f/2/m-st-brooklynhalfsleeve-black-smartees-original-imagph2fqzfy3yvk.jpeg?q=70" class="small-img" width=100% alt="">
+            </div>
+         
+         
+            <div class="small-img-col">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/b/q/m/m-st-santa-black-smartees-original-imagqaxfbfgzthte.jpeg?q=70" class="small-img" width=100% alt="">
+            </div>
+         
+         
+            <div class="small-img-col">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/n/t/x/l-wynk-black-hs-smartees-original-imaghqfa7agdzcar.jpeg?q=70" class="small-img" width=100% alt="">
+            </div>
+        </div>
+    </div>
+    <div class="single-pro-details">
+    
+        <select  >
+            <option >Select size</option>
+            <option >XL</option>
+            <option >XLL</option>
+            <option >small</option>
+            <option >large</option>
+        </select>
+        <input type="number" value="1">
+       <a href="/cart.html"><button class="normal">Add to cart</button></a> 
+        <h4>Product details</h4>
+        <span>Premium quality product designed for comfort, durability, and style.</span>
     </div>
   </section>
-
-<section id="prodetails" class="section">
-    <div class="single-pro-details">
-        <div class="product-actions">
-            <select>
-                <option>Select size</option>
-                <option>XL</option>
-                <option>XLL</option>
-                <option>Small</option>
-                <option>Large</option>
-            </select>
-            <input type="number" value="1" min="1">
-            <a href="/cart.html"><button class="normal">Add to Cart</button></a>
-        </div>
-        <div class="product-info">
-            <h4>Product Details</h4>
-            <span>Premium quality product designed for comfort, durability, and style.</span>
-        </div>
-    </div>
-</section>
-
   <section id="product1" class="section">
     <h2>FEATURE PRODUCT</h2>
     <div class="product-container">
@@ -156,57 +239,112 @@
     </div>
 </section>
    
-  <footer class="footer">
-  <div class="col">
-    <img src="/imag/ logo.jpg" alt="logo" class="footer-logo">
-    <h4>About Us</h4>
-    <p><strong>Address:</strong> Jawahar Bhavan, IIT Roorkee</p>
-    <p><strong>Phone:</strong> **********</p>
-    <div class="follow">
-      <h4>Follow Us</h4>
-      <div class="icon">
-        <a href="#" class="fa fa-facebook"></a>   
-        <a href="#" class="fa fa-twitter"></a>  
-        <a href="#" class="fa fa-linkedin"></a>   
-        <a href="#" class="fa fa-instagram"></a>  
-      </div>
+<footer  >
+    <div class="col">
+        <img src="/imag/ logo.jpg" alt="">
+        <h4>about us</h4>
+        <p><strong>Address:</strong>jawahar bhavan IIT ROORKEE</p>
+        <p><strong>Phone:</strong>**********</p>
+        <div class="follow">
+            <h4>follow us</h4>
+            <div class="icon">
+                <a href="#" class="fa fa-facebook"> </a>   
+                <a href="#" class="fa fa-twitter"> </a>  
+                <a href="#" class="fa fa-linkedin"> </a>   
+                <a href="#" class="fa fa-instagram"> </a>  
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col">
 
-  <div class="col">
-    <h4>About</h4>
-    <a href="#">About Us</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms & Conditions</a>
-    <a href="#">Contact Us</a>
-  </div>
-
-
-
-        <div class="col">
-    <h4>My Account</h4>
-    <a href="#">Sign In</a>
-    <a href="#">View Cart</a>
-    <a href="#">Track My Order</a>
-    <a href="#">Help</a>
-  </div>
-
-  <div class="col install">
-    <h4>Install App</h4>
-    <p>From App Store or Google Play</p>
-    <div class="row">
-      <a href="https://apps.apple.com/app/your-ios-app-id" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg" alt="App Store" class="store-btn">
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=your.android.app.package" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-btn">
-      </a>
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">contact us</a>
     </div>
-  </div>
-</footer>
-<script src="/js/source.js"  >
+    <div class="col">
 
+        <h4>My account</h4>
+        <a href="#">Sign In </a>
+        <a href="#">Veiw cart</a>
+        <a href="#">Track my order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>from app store or Google play</p>
+        <div class="row">
+            <a href="https://apps.apple.com/app/your-ios-app-id" target="_blank">
+                <img src="https://w7.pngwing.com/pngs/270/658/png-transparent-app-store-apple-google-play-apple-text-logo-mobile-phones-thumbnail.png" alt="Download on the App Store (iOS)">
+            </a>
+        
+            <!-- Link to Google Play Store -->
+            <a href="https://play.google.com/store/apps/details?id=your.android.app.package" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTexJ5lzjJWp0rlRO80IWZph86kxb8bU7-mkvwJx-MLnw&s" alt="Get it on Google Play (Android)">
+            </a>
+        </div>
+    </div>
+   </footer>
+
+<script src="/js/source.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product');
+        const product = products[productId];
+        
+        if (product) {
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-title').textContent = product.title;
+            
+            const priceElement = document.getElementById('product-price');
+            if (priceElement) {
+                priceElement.textContent = '₹' + product.price;
+            }
+        }
+        
+        updateCartCount();
+    });
+
+    function addToCartFromProduct() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product');
+        const quantity = parseInt(document.getElementById('quantity').value) || 1;
+        
+        if (productId && products[productId]) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItemIndex = cart.findIndex(item => item.id === productId);
+            
+            if (existingItemIndex >= 0) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    title: products[productId].title,
+                    image: products[productId].image,
+                    price: products[productId].price,
+                    quantity: quantity
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            window.location.href = '/cart.html';
+        }
+    }
+
+    // Handle small image clicks
+    var mainimg = document.getElementById("product-image");
+    var smallimg = document.getElementsByClassName('small-img');
+
+    for (let i = 0; i < smallimg.length; i++) {
+        smallimg[i].onclick = function() {
+            mainimg.src = smallimg[i].src;
+        };
+    }
 </script>
+
 <script>
    document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
@@ -227,5 +365,6 @@
 
   </script>
    
+
 </body>
 </html>

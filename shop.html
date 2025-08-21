@@ -10,6 +10,7 @@
      
 </head>
 <body>
+ toggle
   <!-- Header Section -->
 <header class="header">
   <!-- Logo -->
@@ -33,41 +34,39 @@
 
   <!-- Search Bar -->
   <div class="search-bar">
+
     <input type="text" id="searchInput" placeholder="Enter your search query">
+    <!-- Add a search icon -->
     <span id="searchIcon" class="search-icon" onclick="performSearch()">&#128269;</span>
-  </div>
-
-  <!-- Navigation -->
-  <nav>
-    <ul class="navibar" id="navbar">
-      <li><a href="/index.html"><span>Home</span><i class="fa fa-home"></i></a></li>
-      <li><a href="/shop.html" class="active"><span>Shop</span><i class="fa fa-shopping-cart"></i></a></li>
-      <li><a href="/about.html"><span>About</span><i class="fa fa-info-circle"></i></a></li>
-      <li><a href="/contact.html"><span>Contact</span><i class="fa fa-envelope"></i></a></li>
-      <li><a href="/sign.html"><span>Sign</span><i class="fa fa-user"></i></a></li>
-      <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
-      <li><a href="#" id="close"><i class="fa fa-times"></i></a></li>
-    </ul>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile">
-    <a href="/cart.html"><i class="fa fa-shopping-basket"></i></a> 
-    <i id="bar" class="fa fa-outdent"></i>
-  </div>
-</header>
-
-<!-- Page Header / Banner -->
-<section id="page-header" class="shop-header">
-  <h2>Stay Home</h2>
-  <p>Save more with coupon &amp; up to 70% off</p>
+        <ul class="navibar" id="navbar">
+            <li><a href="/index.html" ><span>home</span><i class="fa fa-home"></i></a></li>
+            <li><a href="/shop.html" class="active"><span>shop</span><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="/about.html"><span>about</span><i class="fa fa-info-circle"></i></a></li>
+            <li><a href="/contact.html"><span>contact</span><i class="fa fa-envelope"></i></a></li>
+            <li><a href="/sign.html"><span>sign</span><i class="fa fa-user"></i></a></li>
+            <li id="lg-bag">
+                <a href="/cart.html">
+                    <i class="fa fa-shopping-basket"></i>
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a>
+            </li>
+            <a href="#" id="close"><i class="fa fa-times"></i></a>
+        </ul>
+        
+    <div id="mobile">
+        <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
+        <i id="bar" class="fa fa-outdent"></i>
+    </div>
 </section>
-
+    <section id="page-header" class="shop-header">
+        <h2>Stay home</h2>
+        <p>save more with coupon& upto 70%off</p>
+      </section>
    
-  <section id="product1" class="section">
-  <h2 class="section-title">FEATURE PRODUCTS</h2>
+    <section id="product1" class="section">
+         
+         <div class="product-container">
 
-  <div class="product-container">
             
             <div class="product" onclick="window.location.href='/singleproduct.html';">
                 <a href="singleproduct.html?product=1">
@@ -83,7 +82,7 @@
                         </div>
                         <div>
                          <h4>₹299</h4>
-                        <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="#" class="ai" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                        
                      </div>
@@ -191,7 +190,7 @@
             </div>
             <div class="product" onclick="window.location.href='/singleproduct.html';">
                 <a href="singleproduct.html?product=7">
-                    <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/products/TP592REDD_M2.jpg?v=1746621912" alt="Product 7">
+                    <img src="https://www.fablestreet.com/cdn/shop/products/cotton_round_neck_knitted_fit_and_flare_dress_l1_0c2f9892-9a92-4673-9021-c7cbc0a948e6_1300x.jpg?v=1613100761" alt="Product 7">
                     <div class="des">
                         <h6>Top's For Girls</h6>
                         <div>
@@ -211,7 +210,7 @@
             </div>
             <div class="product" onclick="window.location.href='/singleproduct.html';">
                 <a href="singleproduct.html?product=8">
-                    <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/files/FSDR1079BRPR_2.jpg?v=1696505392 alt=" alt="Product 8">
+                    <img src="https://www.fablestreet.com/cdn/shop/products/v_neck_floral_fit_and_flare_dress_l1_1300x.jpg?v=1690290104" alt="Product 8">
                     <div class="des">
                         <h6>Top's for Girls</h6>
                         <div>
@@ -373,61 +372,67 @@
    </section>
 
    <section id="pagination">
-    <a href="#" class="page-number active">1</a>
-    <a href="#" class="page-number">2</a>
-    <a href="#" class="page-next"><i class="fa fa-long-arrow-right"></i></a>
-</section>
-
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+   </section>
 
    
-  <footer class="footer">
-  <div class="col">
-    <img src="/imag/ logo.jpg" alt="logo" class="footer-logo">
-    <h4>About Us</h4>
-    <p><strong>Address:</strong> Jawahar Bhavan, IIT Roorkee</p>
-    <p><strong>Phone:</strong> **********</p>
-    <div class="follow">
-      <h4>Follow Us</h4>
-      <div class="icon">
-        <a href="#" class="fa fa-facebook"></a>   
-        <a href="#" class="fa fa-twitter"></a>  
-        <a href="#" class="fa fa-linkedin"></a>   
-        <a href="#" class="fa fa-instagram"></a>  
-      </div>
+   <footer  >
+    <div class="col">
+        <img src="/imag/ logo.jpg" alt="">
+        <h4>about us</h4>
+        <p><strong>Address:</strong>jawahar bhavan IIT ROORKEE</p>
+        <p><strong>Phone:</strong>**********</p>
+        <div class="follow">
+            <h4>follow us</h4>
+            <div class="icon">
+                <a href="#" class="fa fa-facebook"> </a>   
+                <a href="#" class="fa fa-twitter"> </a>  
+                <a href="#" class="fa fa-linkedin"> </a>   
+                <a href="#" class="fa fa-instagram"> </a>  
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col">
 
-  <div class="col">
-    <h4>About</h4>
-    <a href="#">About Us</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms & Conditions</a>
-    <a href="#">Contact Us</a>
-  </div>
-
-
-
-        <div class="col">
-    <h4>My Account</h4>
-    <a href="#">Sign In</a>
-    <a href="#">View Cart</a>
-    <a href="#">Track My Order</a>
-    <a href="#">Help</a>
-  </div>
-
-  <div class="col install">
-    <h4>Install App</h4>
-    <p>From App Store or Google Play</p>
-    <div class="row">
-      <a href="https://apps.apple.com/app/your-ios-app-id" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_(iOS).svg" alt="App Store" class="store-btn">
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=your.android.app.package" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-btn">
-      </a>
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">contact us</a>
     </div>
-  </div>
-</footer>
+    <div class="col">
+
+        <h4>My account</h4>
+        <a href="#">Sign In </a>
+        <a href="#">Veiw cart</a>
+        <a href="#">Track my order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>from app store or Google play</p>
+        <div class="row">
+            <a href="https://apps.apple.com/app/your-ios-app-id" target="_blank">
+                <img src="https://w7.pngwing.com/pngs/270/658/png-transparent-app-store-apple-google-play-apple-text-logo-mobile-phones-thumbnail.png" alt="Download on the App Store (iOS)">
+            </a>
+        
+            <!-- Link to Google Play Store -->
+            <a href="https://play.google.com/store/apps/details?id=your.android.app.package" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTexJ5lzjJWp0rlRO80IWZph86kxb8bU7-mkvwJx-MLnw&s" alt="Get it on Google Play (Android)">
+            </a>
+        </div>
+    </div>
+   </footer>
+
+   <script src="/js/source.js"></script>
+    <script>
+        // Update cart count when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+
 
    <script  src="/js/source.js"></script>
    <script>
@@ -449,5 +454,39 @@
 });
 
   </script>
+// Add cart count display to the header
+        const cartIcon = document.querySelector('#lg-bag');
+        if (cartIcon) {
+            const cartCount = document.createElement('span');
+            cartCount.id = 'cart-count';
+            cartCount.className = 'cart-count';
+            cartCount.style.cssText = 'position: absolute; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; top: -8px; right: -8px;';
+            cartIcon.style.position = 'relative';
+            cartIcon.appendChild(cartCount);
+        }
+        
+        // Add click handlers to all cart icons
+        document.querySelectorAll('.fa-shopping-cart').forEach(function(cartIcon) {
+            const cartLink = cartIcon.closest('.ai');
+            if (cartLink) {
+                cartLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Find the closest product container and get its ID
+                    const productContainer = this.closest('.product');
+                    const productLink = productContainer.querySelector('a[href^="singleproduct.html"]');
+                    if (productLink) {
+                        const productId = new URLSearchParams(productLink.href.split('?')[1]).get('product');
+                        if (productId) {
+                            addToCart(productId);
+                            return false;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>
