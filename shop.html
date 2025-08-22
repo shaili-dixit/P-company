@@ -14,61 +14,130 @@
   <!-- Header Section -->
 <header class="header">
     <!-- Logo -->
-    <a href="/" class="logo">
-      <img src="/imag/ logo.jpg" alt="Brand Logo">
-    </a>
-
-    <!-- Category Dropdown -->
-    <details class="category-dropdown">
-      <summary>All</summary>
-      <div class="dropdown-content">
-        <p>Pants</p>
-        <p>Lower</p>
-        <p>Shirts</p>
-        <p>T-Shirts</p>
-        <p>Top</p>
-      </div>
-    </details>
+    <div class="logo-container">
+      <a href="/" class="logo">
+        <img src="/imag/ logo.jpg" alt="Brand Logo">
+        <span class="brand-name"></span>
+      </a>
+    </div>
 
     <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search products...">
-      <button id="searchIcon" class="search-icon" onclick="performSearch()">
-        <i class="fa fa-search"></i>
-      </button>
+    <div class="search-container">
+      <!-- Category Dropdown -->
+      <div class="category-dropdown">
+        <select id="categorySelect" class="category-select">
+          <option value="all">All Categories</option>
+          <option value="pants">Pants</option>
+          <option value="lower">Lower</option>
+          <option value="shirts">Shirts</option>
+          <option value="t-shirts">T-Shirts</option>
+          <option value="top">Top</option>
+        </select>
+      </div>
+      
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for products...">
+        <button id="searchIcon" class="search-btn" onclick="performSearch()">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
     </div>
 
     <!-- Navigation -->
-    <nav>
-      <ul class="navibar" id="navbar">
-        <li><a href="/index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
-        <li><a href="/shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
-        <li><a href="/about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
-        <li><a href="/contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
-        <li><a href="/sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
-        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
-        <li><i class="fa fa-times-circle" id="close"></i></li>
+    <nav class="navigation">
+      <ul class="navbar" id="navbar">
+        <li class="nav-item">
+          <a href="/index.html" class="nav-link">
+            <i class="fa fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/shop.html" class="nav-link active">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Shop</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/about.html" class="nav-link">
+            <i class="fa fa-info-circle"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact.html" class="nav-link">
+            <i class="fa fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/sign.html" class="nav-link">
+            <i class="fa fa-user"></i>
+            <span>Account</span>
+          </a>
+        </li>
+        <li class="nav-item cart-item" id="lg-bag">
+          <a href="/cart.html" class="nav-link cart-link">
+            <i class="fa fa-shopping-basket"></i>
+          </a>
+        </li>
+        <li class="nav-item close-item">
+          <i class="fa fa-times" id="close"></i>
+        </li>
       </ul>
     </nav>
 
     <!-- Mobile Menu -->
-
-    <div id="mobile">
-      <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
-      <i id="bar" class="fa fa-outdent"></i>
+    <div id="mobile" class="mobile-menu">
+      <a href="/cart.html" class="mobile-cart">
+        <i class="fa fa-shopping-basket"></i>
+        <span class="cart-count mobile-cart-count" id="mobile-cart-count">0</span>
+      </a> 
+      <button id="bar" class="hamburger-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-
-    <!-- Dark/Light Mode Toggle -->
-<div class="dark-mode-toggle" id="themeToggle">🌞</div>
-
-
 
   </header>
 
+    <!-- Enhanced Shop Hero Section -->
     <section id="page-header" class="shop-header">
-        <h2>Stay home</h2>
-        <p>save more with coupon& upto 70%off</p>
-      </section>
+        <div class="hero-overlay"></div>
+        <div class="shop-hero-content">
+            <div class="hero-badge">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Shop Now</span>
+            </div>
+            <h1 class="shop-hero-title">Stay Home & Shop Smart</h1>
+            <p class="shop-hero-subtitle">Discover amazing deals with coupons & up to <strong>70% OFF</strong></p>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fa fa-truck"></i>
+                    <span>Free Delivery</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fa fa-shield"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fa fa-tag"></i>
+                    <span>Best Deals</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="primary-btn" onclick="scrollToProducts()">
+                    <i class="fa fa-arrow-down"></i>
+                    Explore Products
+                </button>
+                <button class="secondary-btn">
+                    <i class="fa fa-percent"></i>
+                    View Offers
+                </button>
+            </div>
+        </div>
+    </section>
    
       <section id="product1" class="section"> 
   
@@ -76,128 +145,200 @@
 
     <!-- Product Card -->
   <div class="product" onclick="window.location.href='/singleproduct.html?product=1';">
-  <a href="singleproduct.html?product=1">
-    <img src="https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=" alt="Product 1">
-    <div class="des">
-      <h6>T-shirt</h6>
-      <div class="stars">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <div class="price-cart">
-        <h4>₹299</h4>
-        <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+    <div class="product-badge">New</div>
+    <div class="product-image">
+      <img src="https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=" alt="Product 1">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
       </div>
     </div>
-  </a>
-</div>
-
-
-
-          <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=2">
-        <img src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80" alt="Product 2">
-        <div class="des">
-            <h6>Full sleeve T-shirt</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹399</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+    <div class="product-info">
+      <h6 class="product-title">Premium Cotton T-shirt</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.8)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹299</span>
+        <span class="original-price">₹399</span>
+        <span class="discount">25% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
 
-           <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=3">
-        <img src="https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80" alt="Product 3">
-        <div class="des">
-            <h6>Hoodies</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹599</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+
+          <div class="product" onclick="window.location.href='/singleproduct.html?product=2';">
+    <div class="product-badge sale">Sale</div>
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80" alt="Product 2">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Full Sleeve Premium T-shirt</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.6)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹399</span>
+        <span class="original-price">₹499</span>
+        <span class="discount">20% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
-          <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=4">
-        <img src="https://media.istockphoto.com/id/1222396502/photo/gorgeous-young-female-in-classic-suit-black-shoes-and-grey-coat-vintage-chair-womans-clothes.jpg?s=1024x1024&w=is&k=20&c=QuLFE2xi9ZA81cjnGPF76otE_UCvxRTIrW0_O2aEwX4=" alt="Product 4">
-        <div class="des">
-            <h6>Coat for Women</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹799</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+
+           <div class="product" onclick="window.location.href='/singleproduct.html?product=3';">
+    <div class="product-badge trending">Hot</div>
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80" alt="Product 3">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Stylish Hoodies</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.9)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹599</span>
+        <span class="original-price">₹799</span>
+        <span class="discount">25% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
-<div class="product">
-    <a href="singleproduct.html?product=5">
-        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60" alt="Product 5">
-        <div class="des">
-            <h6>Black T-shirt</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹349</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+          <div class="product" onclick="window.location.href='/singleproduct.html?product=4';">
+    <div class="product-badge premium">Premium</div>
+    <div class="product-image">
+      <img src="https://media.istockphoto.com/id/1222396502/photo/gorgeous-young-female-in-classic-suit-black-shoes-and-grey-coat-vintage-chair-womans-clothes.jpg?s=1024x1024&w=is&k=20&c=QuLFE2xi9ZA81cjnGPF76otE_UCvxRTIrW0_O2aEwX4=" alt="Product 4">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Elegant Coat for Women</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.7)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹799</span>
+        <span class="original-price">₹999</span>
+        <span class="discount">20% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
-
-           <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=6">
-        <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="Product 6">
-        <div class="des">
-            <h6>Frock's for Girls</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹499</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+<div class="product" onclick="window.location.href='/singleproduct.html?product=5';">
+    <div class="product-badge sale">Sale</div>
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60" alt="Product 5">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Classic Black T-shirt</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.8)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹349</span>
+        <span class="original-price">₹449</span>
+        <span class="discount">22% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+
+           <div class="product" onclick="window.location.href='/singleproduct.html?product=6';">
+    <div class="product-badge premium">Premium</div>
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="Product 6">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Beautiful Frock for Girls</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.7)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹499</span>
+        <span class="original-price">₹649</span>
+        <span class="discount">23% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 </div>
     </section>
 
@@ -206,186 +347,294 @@
 <section id="product1" class="section">
   <h2>NEW ARRIVALS</h2>
   <div class="product-container">
-    <div class="product" onclick="window.location.href='/singleproduct.html';">
-      <a href="singleproduct.html?product=7">
+    <div class="product" onclick="window.location.href='/singleproduct.html?product=7';">
+      <div class="product-badge new">New</div>
+      <div class="product-image">
         <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/products/TP592REDD_M2.jpg?v=1746621912" alt="Product 7">
-        <div class="des">
-          <h6>Top's for Girls</h6>
-          <div>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <div>
-            <h4>₹299</h4>
-            <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-          </div>
+        <div class="product-overlay">
+          <button class="quick-view-btn">Quick View</button>
         </div>
-      </a>
+      </div>
+      <div class="product-info">
+        <h6 class="product-title">Trendy Top for Girls</h6>
+        <div class="product-rating">
+          <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <span class="rating-count">(4.5)</span>
+        </div>
+        <div class="product-price">
+          <span class="current-price">₹299</span>
+          <span class="original-price">₹399</span>
+          <span class="discount">25% Off</span>
+        </div>
+        <button class="add-to-cart-btn">
+          <i class="fa fa-shopping-cart"></i>
+          <span>Add to Cart</span>
+        </button>
+      </div>
     </div>
   
 
-         <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=8">
-        <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/files/FSDR1079BRPR_2.jpg?v=1696505392" alt="Product 8">
-        <div class="des">
-            <h6>Top's for Girls</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹299</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </a>
-</div>
-
-      <div class="product" onclick="window.location.href='/singleproduct.html?product=9';">
-    <a href="singleproduct.html?product=9">
-        <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/tr:w-960,/12e1034TWDR705.jpg?rnd=20200526195200" alt="Product 9">
-        <div class="des">
-            <h6>Frock's</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹999</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </a>
-</div>
-
-            <div class="product" onclick="window.location.href='/singleproduct.html?product=10';">
-    <a href="singleproduct.html?product=10">
-        <img src="https://m.media-amazon.com/images/I/718J1laiICL._AC_UY1100_.jpg" alt="Product 10">
-        <div class="des">
-            <h6>Frock's for Kids</h6>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div class="price-cart">
-                <h4>₹699</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </a>
-</div>
-
-            <div class="product" onclick="window.location.href='/singleproduct.html?product=11';">
-    <a href="singleproduct.html?product=11">
-        <img src="https://img3.junaroad.com/uiproducts/19670369/zoom_0-1681130955.jpg" alt="Product 11">
-        <div class="des">
-            <h6>Women's Top</h6>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div class="price-cart">
-                <h4>₹449</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </a>
-</div>
-
- <div class="product">
-  <a href="singleproduct.html?product=12">
-    <img src="https://img3.junaroad.com/uiproducts/20165393/zoom_0-1691736139.jpg" alt="Product 12">
-    <div class="des">
-      <h6>T-shirts</h6>
-      <div>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <div>
-        <h4>₹249</h4>
-        <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+         <div class="product" onclick="window.location.href='/singleproduct.html?product=8';">
+    <div class="product-badge new">New</div>
+    <div class="product-image">
+      <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/files/FSDR1079BRPR_2.jpg?v=1696505392" alt="Product 8">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
       </div>
     </div>
-  </a>
-</div>
-
-            <div class="product">
-    <a href="singleproduct.html?product=13">
-        <img src="https://img3.junaroad.com/uiproducts/19514453/zoom_0-1678805803.jpg" alt="Product 13">
-        <div class="des">
-            <h6>Cotton T-shirts</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹399</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+    <div class="product-info">
+      <h6 class="product-title">Stylish Top for Girls</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
-<div class="product">
-    <a href="singleproduct.html?product=14">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Product 14">
-        <div class="des">
-            <h6>Trousers</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹799</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+        <span class="rating-count">(4.4)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹299</span>
+        <span class="original-price">₹399</span>
+        <span class="discount">25% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+      <div class="product" onclick="window.location.href='/singleproduct.html?product=9';">
+    <div class="product-badge trending">Hot</div>
+    <div class="product-image">
+      <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/tr:w-960,/12e1034TWDR705.jpg?rnd=20200526195200" alt="Product 9">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Designer Frock Collection</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.9)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹999</span>
+        <span class="original-price">₹1299</span>
+        <span class="discount">23% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+            <div class="product" onclick="window.location.href='/singleproduct.html?product=10';">
+    <div class="product-badge sale">Sale</div>
+    <div class="product-image">
+      <img src="https://m.media-amazon.com/images/I/718J1laiICL._AC_UY1100_.jpg" alt="Product 10">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Adorable Frock for Kids</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.6)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹699</span>
+        <span class="original-price">₹899</span>
+        <span class="discount">22% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+            <div class="product" onclick="window.location.href='/singleproduct.html?product=11';">
+    <div class="product-badge premium">Premium</div>
+    <div class="product-image">
+      <img src="https://img3.junaroad.com/uiproducts/19670369/zoom_0-1681130955.jpg" alt="Product 11">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Elegant Women's Top</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.8)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹449</span>
+        <span class="original-price">₹599</span>
+        <span class="discount">25% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+ <div class="product" onclick="window.location.href='/singleproduct.html?product=12';">
+    <div class="product-badge new">New</div>
+    <div class="product-image">
+      <img src="https://img3.junaroad.com/uiproducts/20165393/zoom_0-1691736139.jpg" alt="Product 12">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Casual Cotton T-shirts</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.3)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹249</span>
+        <span class="original-price">₹329</span>
+        <span class="discount">24% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+            <div class="product" onclick="window.location.href='/singleproduct.html?product=13';">
+    <div class="product-badge trending">Hot</div>
+    <div class="product-image">
+      <img src="https://img3.junaroad.com/uiproducts/19514453/zoom_0-1678805803.jpg" alt="Product 13">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Premium Cotton T-shirts</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.7)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹399</span>
+        <span class="original-price">₹529</span>
+        <span class="discount">25% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+<div class="product" onclick="window.location.href='/singleproduct.html?product=14';">
+    <div class="product-badge premium">Premium</div>
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Product 14">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Stylish Trousers</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <span class="rating-count">(4.5)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹799</span>
+        <span class="original-price">₹999</span>
+        <span class="discount">20% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
 
-      <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=15">
-        <img src="https://media.istockphoto.com/id/173867932/photo/red-football-shirt.jpg?s=1024x1024&w=is&k=20&c=qggoJiI6Ldj6WkBn744yjaYSqfl82d1-9ZnBARKXFGc=" alt="Product 15">
-        <div class="des">
-            <h6>Cut T-shirts</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹249</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+      <div class="product" onclick="window.location.href='/singleproduct.html?product=15';">
+    <div class="product-badge sale">Sale</div>
+    <div class="product-image">
+      <img src="https://media.istockphoto.com/id/173867932/photo/red-football-shirt.jpg?s=1024x1024&w=is&k=20&c=qggoJiI6Ldj6WkBn744yjaYSqfl82d1-9ZnBARKXFGc=" alt="Product 15">
+      <div class="product-overlay">
+        <button class="quick-view-btn">Quick View</button>
+      </div>
+    </div>
+    <div class="product-info">
+      <h6 class="product-title">Sports Cut T-shirt</h6>
+      <div class="product-rating">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
         </div>
-    </a>
-</div>
+        <span class="rating-count">(4.4)</span>
+      </div>
+      <div class="product-price">
+        <span class="current-price">₹249</span>
+        <span class="original-price">₹329</span>
+        <span class="discount">24% Off</span>
+      </div>
+      <button class="add-to-cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
 
    </div>
    </section>
@@ -452,39 +701,126 @@
         // Update cart count when page loads
         document.addEventListener('DOMContentLoaded', function() {
             updateCartCount();
-        });
-
-        // Add cart count display to the header
-        const cartIcon = document.querySelector('#lg-bag');
-        if (cartIcon) {
-            const cartCount = document.createElement('span');
-            cartCount.id = 'cart-count';
-            cartCount.className = 'cart-count';
-            cartCount.style.cssText = 'position: absolute; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; top: -8px; right: -8px;';
-            cartIcon.style.position = 'relative';
-            cartIcon.appendChild(cartCount);
-        }
-        
-        // Add click handlers to all cart icons
-        document.querySelectorAll('.fa-shopping-cart').forEach(function(cartIcon) {
-            const cartLink = cartIcon.closest('.ai');
-            if (cartLink) {
-                cartLink.addEventListener('click', function(e) {
+            
+            // Add cart count display to the header
+            const cartIcon = document.querySelector('#lg-bag');
+            if (cartIcon) {
+                const cartCount = document.createElement('span');
+                cartCount.id = 'cart-count';
+                cartCount.className = 'cart-count';
+                cartCount.style.cssText = 'position: absolute; background: transparent; color: transparent; border-radius: 50%; padding: 2px 6px; font-size: 12px; top: -8px; right: -8px; display: none;';
+                cartIcon.style.position = 'relative';
+                cartIcon.appendChild(cartCount);
+            }
+            
+            // Add click handlers to all cart buttons
+            console.log('Found', document.querySelectorAll('.add-to-cart-btn').length, 'add to cart buttons'); // Debug log
+            console.log('addToCart function available:', typeof addToCart); // Debug log
+            
+            document.querySelectorAll('.add-to-cart-btn').forEach(function(cartBtn) {
+                cartBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Find the closest product container and get its ID
+                    // Find the closest product container and get its product ID
                     const productContainer = this.closest('.product');
-                    const productLink = productContainer.querySelector('a[href^="singleproduct.html"]');
-                    if (productLink) {
-                        const productId = new URLSearchParams(productLink.href.split('?')[1]).get('product');
-                        if (productId) {
+                    const productId = productContainer.getAttribute('onclick').match(/product=(\d+)/)?.[1];
+                    
+                    if (productId) {
+                        console.log('Adding product to cart:', productId); // Debug log
+                        
+                        // Try calling addToCart function
+                        if (typeof addToCart === 'function') {
                             addToCart(productId);
-                            return false;
+                        } else {
+                            // Fallback: implement add to cart inline
+                            try {
+                                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                                const products = {
+                                    '1': { title: 'Premium Cotton T-shirt', price: 299, image: 'https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=' },
+                                    '2': { title: 'Full Sleeve Premium T-shirt', price: 399, image: 'https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80' },
+                                    '3': { title: 'Stylish Hoodies', price: 599, image: 'https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80' },
+                                    '4': { title: 'Elegant Coat for Women', price: 799, image: 'https://media.istockphoto.com/id/1222396502/photo/gorgeous-young-female-in-classic-suit-black-shoes-and-grey-coat-vintage-chair-womans-clothes.jpg?s=1024x1024&w=is&k=20&c=QuLFE2xi9ZA81cjnGPF76otE_UCvxRTIrW0_O2aEwX4=' },
+                                    '5': { title: 'Classic Black T-shirt', price: 349, image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60' },
+                                    '6': { title: 'Beautiful Frock for Girls', price: 499, image: 'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60' },
+                                    '7': { title: 'Trendy Top for Girls', price: 299, image: 'https://cdn.shopify.com/s/files/1/0486/0634/7416/products/TP592REDD_M2.jpg?v=1746621912' },
+                                    '8': { title: 'Stylish Top for Girls', price: 299, image: 'https://cdn.shopify.com/s/files/1/0486/0634/7416/files/FSDR1079BRPR_2.jpg?v=1696505392' },
+                                    '9': { title: 'Designer Frock Collection', price: 999, image: 'https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/tr:w-960,/12e1034TWDR705.jpg?rnd=20200526195200' },
+                                    '10': { title: 'Adorable Frock for Kids', price: 699, image: 'https://m.media-amazon.com/images/I/718J1laiICL._AC_UY1100_.jpg' },
+                                    '11': { title: 'Elegant Women\'s Top', price: 449, image: 'https://img3.junaroad.com/uiproducts/19670369/zoom_0-1681130955.jpg' },
+                                    '12': { title: 'Casual Cotton T-shirts', price: 249, image: 'https://img3.junaroad.com/uiproducts/20165393/zoom_0-1691736139.jpg' },
+                                    '13': { title: 'Premium Cotton T-shirts', price: 399, image: 'https://img3.junaroad.com/uiproducts/19514453/zoom_0-1678805803.jpg' },
+                                    '14': { title: 'Stylish Trousers', price: 799, image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80' },
+                                    '15': { title: 'Sports Cut T-shirt', price: 249, image: 'https://media.istockphoto.com/id/173867932/photo/red-football-shirt.jpg?s=1024x1024&w=is&k=20&c=qggoJiI6Ldj6WkBn744yjaYSqfl82d1-9ZnBARKXFGc=' }
+                                };
+                                
+                                const product = products[productId];
+                                if (product) {
+                                    const existingItemIndex = cart.findIndex(item => item.id === productId);
+                                    
+                                    if (existingItemIndex >= 0) {
+                                        cart[existingItemIndex].quantity += 1;
+                                    } else {
+                                        cart.push({
+                                            id: productId,
+                                            title: product.title,
+                                            image: product.image,
+                                            price: product.price,
+                                            quantity: 1
+                                        });
+                                    }
+                                    
+                                    localStorage.setItem('cart', JSON.stringify(cart));
+                                    console.log('Product added to cart successfully');
+                                    
+                                    // Redirect to cart page
+                                    window.location.href = '/cart.html';
+                                } else {
+                                    console.error('Product not found:', productId);
+                                }
+                            } catch (error) {
+                                console.error('Error adding to cart:', error);
+                                alert('Error adding product to cart. Please try again.');
+                            }
+                        }
+                    } else {
+                        console.error('Product ID not found');
+                    }
+                    
+                    return false;
+                });
+            });
+            
+            // Add click handlers to quick view buttons
+            document.querySelectorAll('.quick-view-btn').forEach(function(quickViewBtn) {
+                quickViewBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Get product ID and redirect to single product page
+                    const productContainer = this.closest('.product');
+                    const productId = productContainer.getAttribute('onclick').match(/product=(\d+)/)?.[1];
+                    
+                    if (productId) {
+                        window.location.href = `/singleproduct.html?product=${productId}`;
+                    }
+                    
+                    return false;
+                });
+            });
+            
+            // Also handle the main product container click (for the area outside buttons)
+            document.querySelectorAll('.product').forEach(function(product) {
+                product.addEventListener('click', function(e) {
+                    // Only navigate if the click wasn't on a button
+                    if (!e.target.closest('.add-to-cart-btn') && !e.target.closest('.quick-view-btn')) {
+                        const onclick = this.getAttribute('onclick');
+                        if (onclick) {
+                            eval(onclick);
                         }
                     }
                 });
-            }
+            });
         });
     </script>
 </body>
