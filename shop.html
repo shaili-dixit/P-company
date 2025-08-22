@@ -12,50 +12,57 @@
 <body>
   <!-- Header Section -->
 <header class="header">
-  <!-- Logo -->
-  <a href="/" class="logo">
-    <img src="/imag/ logo.jpg" alt="Brand Logo">
-     <!-- Dark/Light Mode Toggle -->
-<div class="dark-mode-toggle" id="themeToggle">🌞</div>
-  </a>
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <img src="/imag/ logo.jpg" alt="Brand Logo">
+    </a>
 
-  <!-- Category Dropdown -->
-  <details class="category-dropdown">
-    <summary>All</summary>
-    <div class="dropdown-content">
-      <p>Pants</p>
-      <p>Lower</p>
-      <p>Shirts</p>
-      <p>T-Shirts</p>
-      <p>Top</p>
+    <!-- Category Dropdown -->
+    <details class="category-dropdown">
+      <summary>All</summary>
+      <div class="dropdown-content">
+        <p>Pants</p>
+        <p>Lower</p>
+        <p>Shirts</p>
+        <p>T-Shirts</p>
+        <p>Top</p>
+      </div>
+    </details>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <button id="searchIcon" class="search-icon" onclick="performSearch()">
+        <i class="fa fa-search"></i>
+      </button>
     </div>
-  </details>
 
-  <!-- Search Bar -->
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Enter your search query">
-    <!-- Add a search icon -->
-    <span id="searchIcon" class="search-icon" onclick="performSearch()">&#128269;</span>
-        <ul class="navibar" id="navbar">
-            <li><a href="/index.html" ><span>home</span><i class="fa fa-home"></i></a></li>
-            <li><a href="/shop.html" class="active"><span>shop</span><i class="fa fa-shopping-cart"></i></a></li>
-            <li><a href="/about.html"><span>about</span><i class="fa fa-info-circle"></i></a></li>
-            <li><a href="/contact.html"><span>contact</span><i class="fa fa-envelope"></i></a></li>
-            <li><a href="/sign.html"><span>sign</span><i class="fa fa-user"></i></a></li>
-            <li id="lg-bag">
-                <a href="/cart.html">
-                    <i class="fa fa-shopping-basket"></i>
-                    <span id="cart-count" class="cart-badge">0</span>
-                </a>
-            </li>
-            <a href="#" id="close"><i class="fa fa-times"></i></a>
-        </ul>
-        
+    <!-- Navigation -->
+    <nav>
+      <ul class="navibar" id="navbar">
+        <li><a href="/index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
+        <li><a href="/shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
+        <li><a href="/about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="/contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="/sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
+        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
+        <li><i class="fa fa-times-circle" id="close"></i></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
     <div id="mobile">
-        <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
-        <i id="bar" class="fa fa-outdent"></i>
+      <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
+      <i id="bar" class="fa fa-outdent"></i>
     </div>
-</section>
+
+    <!-- Dark/Light Mode Toggle -->
+<div class="dark-mode-toggle" id="themeToggle">🌞</div>
+
+
+
+  </header>
+
     <section id="page-header" class="shop-header">
         <h2>Stay home</h2>
         <p>save more with coupon& upto 70%off</p>
