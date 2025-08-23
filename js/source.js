@@ -224,7 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Cart Functionality
+
+
 
 // Cart functionality
 function addToCart(productId) {
