@@ -7,131 +7,346 @@
 .header {
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content:space-between;
-    background-color: rgba(4, 18, 5, 0.822);
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #1a2f1a 0%, #2d4a2d 100%);
     color: white;
-    padding:1px 1px 1px 0;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.912);
-    z-index:999;
-    position:fixed;
+    padding: 10px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    position: fixed;
     top: 0;
     left: 0;
+    backdrop-filter: blur(10px);
 }
+
 .header img {
-    /* width: 200px; */
-    height: 40px;
-    padding: 0;
-    
-    margin: 4.5px 0 0 0;
-    border-radius: 5px;
+    height: 45px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
-#searchInput{
-    width: 40%;
-    font-size: 20px;
-    height: 30px;
-    margin-top: 10px;
+
+.header img:hover {
+    transform: scale(1.05);
+}
+
+/* Left section - Logo and Dropdown */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search section */
+.header-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+#searchInput {
+    width: 100%;
+    font-size: 16px;
+    height: 40px;
+    border: 2px solid #4a6b4a;
+    border-radius: 25px 0 0 25px;
+    padding: 0 20px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #88cc88;
+    box-shadow: 0 0 10px rgba(136, 204, 136, 0.3);
+}
+
+#searchIcon {
+    background: #4a6b4a;
+    color: white;
+    height: 40px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+#searchIcon:hover {
+    background: #88cc88;
+    transform: scale(1.05);
 }
 #navbar {
     display: flex;
-    margin: 3px 10px 3px 0;
-    padding: 3px 3px 3px 0 ;
     align-items: center;
-    
-    justify-content: space-between;
+    gap: 5px;
     color: white;
     position: relative;
-    /* background-color: pink; Remove this line */
-    border-radius: 5px;
-    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 5px 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
 }
+
+#navbar:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .cart-badge {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: red;
+    top: -5px;
+    right: -5px;
+    background: linear-gradient(45deg, #ff4444, #ff6666);
     color: white;
     border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    min-width: 20px;
+    padding: 3px 7px;
+    font-size: 11px;
+    min-width: 18px;
     text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(255, 68, 68, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 #lg-bag {
     position: relative;
 }
 
-#mobile { 
-    display: none; /* or display: flex; or any other suitable value */
-    align-items: center; 
-} 
-
-#close{
-    display: none;
-} 
- #navbar.active{
-    right: 0;
-} 
-.navibar li{
-    /* width: 100%; */
-    margin: 0px 10px;
-    padding: 0;
+.navibar li {
     list-style: none;
-    justify-content: space-between;
+    margin: 0;
 }
- 
- 
+
 .navibar li a {
-    font-size: 20px;
+    font-size: 16px;
     color: white;
-    /* padding: 10px; */
     text-decoration: none;
-    display: flex; /* Use flex display to align text and icon horizontally */
-    align-items: center; /* Vertically center the content */
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navibar li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.navibar li a:hover::before {
+    left: 100%;
 }
 
 .navibar li a span {
-     /* Add some spacing between text and icon */
-    margin:5px 5px 5px 0 ;
-    
-    padding: 5px 5px 5px 0;
+    margin-right: 8px;
+    font-weight: 500;
+    font-size: 14px;
 }
-.navibar li a span i{
-    /* Add some spacing between text and icon */
-   margin:0 2px 0 2px ;
-   padding: 5px 5px 5px 0;
-}
+
 .navibar li a i {
-    font-size: 24px; /* Increase icon size for better visibility */
+    font-size: 18px;
+    transition: transform 0.3s ease;
 }
+
 .navibar li a:hover {
-   
-    background-color: rgba(255, 219, 192, 0.549);
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navibar .active  {
-    text-decoration: none;
-    background-color: rgba(255, 219, 192, 0.549);
-    border-radius: 5px;
-
+.navibar li a:hover i {
+    transform: scale(1.2);
 }
+
+.navibar .active,
+.navibar li a.active {
+    background: linear-gradient(45deg, #88cc88, #66aa66);
+    box-shadow: 0 4px 10px rgba(136, 204, 136, 0.3);
+}
+/* Dropdown Filter Styling */
 details {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top:15px;
+    display: inline-block;
 }
-#searchIcon{
-    margin-top:15px;
-    padding: 2px; 
-}  
-/* Style the content inside the details element */
+
+details summary {
+    background: linear-gradient(45deg, #4a6b4a, #5a7b5a);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+details summary:hover {
+    background: linear-gradient(45deg, #5a7b5a, #6a8b6a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+details[open] summary {
+    background: linear-gradient(45deg, #88cc88, #66aa66);
+    border-color: #88cc88;
+}
+
+details summary::after {
+    content: '▼';
+    float: right;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
 details > div {
-    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 15px;
     padding: 10px;
-    border: 1px solid #333;
+    width: 100%;
+    min-width: auto;
+    max-width: 180px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e0e0e0;
+    z-index: 1000;
+    animation: dropdownOpen 0.3s ease;
+}
+
+@keyframes dropdownOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+details > div p {
+    color: #333;
+    padding: 6px 10px;
+    margin: 1px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+}
+
+details > div p:hover {
+    background: linear-gradient(45deg, #88cc88, #66aa66);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Mobile responsive */
+#mobile { 
+    display: none;
+    align-items: center; 
+} 
+
+#close {
+    display: none;
+} 
+
+#navbar.active {
+    right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+    
+    .header-left {
+        gap: 15px;
+    }
+    
+    .header img {
+        height: 35px;
+    }
+    
+    .header-search {
+        order: 3;
+        width: 100%;
+        margin: 10px 0 0 0;
+        max-width: none;
+    }
+    
+    #navbar {
+        gap: 2px;
+        padding: 3px 8px;
+    }
+    
+    .navibar li a span {
+        display: none;
+    }
+    
+    .navibar li a {
+        padding: 8px 10px;
+    }
+    
+    details summary {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    details > div {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-left {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    #navbar {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
 #learnmore{
