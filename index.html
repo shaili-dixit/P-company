@@ -13,97 +13,58 @@
   <!-- Header -->
   <header class="header">
     <!-- Logo -->
-    <div class="logo-container">
-      <a href="/" class="logo">
-        <img src="/imag/ logo.jpg" alt="Brand Logo">
-        <span class="brand-name"></span>
-      </a>
-    </div>
+    <a href="/" class="logo">
+      <img src="/imag/ logo.jpg" alt="Brand Logo">
+    </a>
+
+    <!-- Category Dropdown -->
+    <details class="category-dropdown">
+      <summary>All</summary>
+      <div class="dropdown-content">
+        <p>Pants</p>
+        <p>Lower</p>
+        <p>Shirts</p>
+        <p>T-Shirts</p>
+        <p>Top</p>
+      </div>
+    </details>
 
     <!-- Search Bar -->
-    <div class="search-container">
-      <!-- Category Dropdown -->
-      <div class="category-dropdown">
-        <select id="categorySelect" class="category-select">
-          <option value="all">All Categories</option>
-          <option value="pants">Pants</option>
-          <option value="lower">Lower</option>
-          <option value="shirts">Shirts</option>
-          <option value="t-shirts">T-Shirts</option>
-          <option value="top">Top</option>
-        </select>
-      </div>
-      
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search for products...">
-        <button id="searchIcon" class="search-btn" onclick="performSearch()">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <button id="searchIcon" class="search-icon" onclick="performSearch()">
+        <i class="fa fa-search"></i>
+      </button>
     </div>
 
     <!-- Navigation -->
-    <nav class="navigation">
-      <ul class="navbar" id="navbar">
-        <li class="nav-item">
-          <a href="/index.html" class="nav-link active">
-            <i class="fa fa-home"></i>
-            <span>Home</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/shop.html" class="nav-link">
-            <i class="fa fa-shopping-cart"></i>
-            <span>Shop</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/about.html" class="nav-link">
-            <i class="fa fa-info-circle"></i>
-            <span>About</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/contact.html" class="nav-link">
-            <i class="fa fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/sign.html" class="nav-link">
-            <i class="fa fa-user"></i>
-            <span>Account</span>
-          </a>
-        </li>
-        <li class="nav-item cart-item" id="lg-bag">
-          <a href="/cart.html" class="nav-link cart-link">
-            <i class="fa fa-shopping-basket"></i>
-          </a>
-        </li>
-        <li class="nav-item close-item">
-          <i class="fa fa-times" id="close"></i>
-        </li>
+    <nav>
+      <ul class="navibar" id="navbar">
+        <li><a href="/index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
+        <li><a href="/shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
+        <li><a href="/about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="/contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="/sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
+        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
+        <li><i class="fa fa-times-circle" id="close"></i></li>
       </ul>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile" class="mobile-menu">
-      <a href="/cart.html" class="mobile-cart">
-        <i class="fa fa-shopping-basket"></i>
-        <span class="cart-count mobile-cart-count" id="mobile-cart-count">0</span>
-      </a> 
-      <button id="bar" class="hamburger-btn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
+      <i id="bar" class="fa fa-outdent"></i>
     </div>
   </header>
 
   <!-- Hero Banner -->
-<section id="buy">
-  <h2>Hurry Up!</h2>
-  <a href="/shop.html"><button>Shop Now</button></a>
+<section id="buy" class="hero-banner">
+  <div class="hero-content">
+    <h1 class="hero-title">Super Deals</h1>
+    <p class="hero-subtitle">Buy and get <strong>70% OFF</strong> on each item</p>
+    <h2 class="hero-urgency">Hurry Up!</h2>
+    <a href="/shop.html" class="cta-btn">Shop Now</a>
+  </div>
 </section>
 
 
