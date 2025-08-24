@@ -453,3 +453,4 @@ function performSearch() {
         window.location.href = `/shop.html?query=${encodeURIComponent(query)}`;
     }
 }
+
