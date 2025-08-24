@@ -334,6 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Mobile Navigation
 const bar = document.getElementById('bar');
 const close = document.getElementById('close');
 const nav = document.getElementById('navbar');
@@ -341,13 +342,70 @@ const nav = document.getElementById('navbar');
 if (bar) {
     bar.addEventListener('click', () => {
         nav.classList.add('active');
-    })
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
 }
 
 if (close) {
     close.addEventListener('click', () => {
         nav.classList.remove('active');
-    })
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (nav && nav.classList.contains('active')) {
+        if (!nav.contains(e.target) && !bar.contains(e.target)) {
+            nav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+});
+
+// Update cart counter
+function updateCartCounter() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    // Update desktop cart counter
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+        cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+    
+    // Update mobile cart counter
+    const mobileCartCount = document.getElementById('mobile-cart-count');
+    if (mobileCartCount) {
+        mobileCartCount.textContent = totalItems;
+        mobileCartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+}
+
+// Initialize cart counter on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCounter();
+    
+    // Update active nav link based on current page
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Call updateCartCounter whenever cart is modified
+const originalAddToCart = window.addToCart;
+if (originalAddToCart) {
+    window.addToCart = function() {
+        originalAddToCart.apply(this, arguments);
+        updateCartCounter();
+    };
 }
 var mainimg = document.getElementById("product-image");
 var smallimg = document.getElementsByClassName('small-img');
@@ -368,12 +426,46 @@ smallimg[3].onclick = function () {
     mainimg.src = smallimg[3].src;
 };
 
+// Enhanced search functionality
 function performSearch() {
     const searchInput = document.getElementById("searchInput");
+    const categorySelect = document.getElementById("categorySelect");
     const query = searchInput.value.trim();
+    const category = categorySelect ? categorySelect.value : 'all';
 
     if (query !== "") {
-        // Redirect to the search results page with the query as a parameter
-        window.location.href = `/shop.html?query=${encodeURIComponent(query)}`;
+        // Redirect to the search results page with the query and category as parameters
+        const params = new URLSearchParams();
+        params.append('query', query);
+        if (category !== 'all') {
+            params.append('category', category);
+        }
+        window.location.href = `/shop.html?${params.toString()}`;
     }
 }
+
+// Enhanced search - also search on Enter key press
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+});
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (header) {
+        if (window.scrollY > 100) {
+            header.style.background = 'linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%)';
+            header.style.backdropFilter = 'blur(15px)';
+        } else {
+            header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)';
+            header.style.backdropFilter = 'blur(10px)';
+        }
+    }
+});
