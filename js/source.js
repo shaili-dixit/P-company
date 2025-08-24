@@ -85,76 +85,91 @@ const products = {
     '1': {
         title: 'T-shirt',
         price: 299,
+        category: 'shirts',
         image: 'https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg='
     },
     '2': {
         title: 'Full Seleeve T-shirt',
         price: 399,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80'
     },
     '3': {
         title: 'Hoodies',
         price: 599,
+        category: 'tops',
         image: 'https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80'
     },
     '4': {
         title: 'Coat for Womens',
         price: 999,
+        category: 'tops',
         image: 'https://media.istockphoto.com/id/1222396502/photo/gorgeous-young-female-in-classic-suit-black-shoes-and-grey-coat-vintage-chair-womans-clothes.jpg?s=1024x1024&w=is&k=20&c=QuLFE2xi9ZA81cjnGPF76otE_UCvxRTIrW0_O2aEwX4='
     },
     '5': {
         title: 'Black T-shirt',
         price: 349,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60'
     },
     '6': {
         title: 'Frock for Girls',
         price: 699,
+        category: 'lower',
         image: 'https://media.istockphoto.com/id/1406303920/photo/womens-sweatpants-sport.jpg?s=612x612&w=0&k=20&c=TxvH1nr7-w_ZtF8hymcDlR_iykcHJtn-enqUx1Kv9a8='
     },
     '7': {
         title: 'Tops for Girls',
         price: 449,
+        category: 'tops',
         image: 'https://www.fablestreet.com/cdn/shop/products/cotton_round_neck_knitted_fit_and_flare_dress_l1_0c2f9892-9a92-4673-9021-c7cbc0a948e6_1300x.jpg?v=1613100761'
     },
     '8': {
         title: 'Tops for Girls',
         price: 449,
+        category: 'tops',
         image: 'https://www.fablestreet.com/cdn/shop/products/v_neck_floral_fit_and_flare_dress_l1_1300x.jpg?v=1690290104'
     },
     '9': {
         title: 'Frocks',
         price: 799,
+        category: 'lower',
         image: 'https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/tr:w-960,/12e1034TWDR705.jpg?rnd=20200526195200'
     },
     '10': {
         title: 'Frocks for Kids',
         price: 499,
+        category: 'lower',
         image: 'https://m.media-amazon.com/images/I/718J1laiICL._AC_UY1100_.jpg'
     },
     '11': {
         title: 'Womens Top',
         price: 399,
+        category: 'tops',
         image: 'https://img3.junaroad.com/uiproducts/19670369/zoom_0-1681130955.jpg'
     },
     '12': {
         title: 'T-shirts',
         price: 299,
+        category: 'shirts',
         image: 'https://img3.junaroad.com/uiproducts/20165393/zoom_0-1691736139.jpg'
     },
     '13': {
         title: 'Cotton T-shirts',
         price: 349,
+        category: 'shirts',
         image: 'https://img3.junaroad.com/uiproducts/19514453/zoom_0-1678805803.jpg'
     },
     '14': {
         title: 'Trousers',
         price: 599,
+        category: 'pants',
         image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80'
     },
     '15': {
         title: 'Cut T-shirts',
         price: 249,
+        category: 'shirts',
         image: 'https://media.istockphoto.com/id/173867932/photo/red-football-shirt.jpg?s=1024x1024&w=is&k=20&c=qggoJiI6Ldj6WkBn744yjaYSqfl82d1-9ZnBARKXFGc='
     },
     '16': {
@@ -454,3 +469,80 @@ function performSearch() {
     }
 }
 
+// Filter functionality
+function filterProducts(category) {
+    const productContainer = document.getElementById('product1');
+    if (!productContainer) return; // Exit if not on shop page
+    
+    const productDivs = productContainer.querySelectorAll('.product');
+    
+    productDivs.forEach(productDiv => {
+        const productId = productDiv.getAttribute('data-product-id');
+        const product = products[productId];
+        
+        if (!product) return;
+        
+        if (category === 'all' || product.category === category.toLowerCase()) {
+            productDiv.style.display = 'block';
+            productDiv.style.animation = 'fadeIn 0.5s ease';
+        } else {
+            productDiv.style.display = 'none';
+        }
+    });
+    
+    // Close the dropdown after selection
+    const details = document.querySelector('details');
+    if (details) {
+        details.removeAttribute('open');
+    }
+}
+
+// Initialize filter functionality when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add data-product-id attributes to products if missing
+    const productDivs = document.querySelectorAll('#product1 .product');
+    productDivs.forEach((productDiv, index) => {
+        if (!productDiv.getAttribute('data-product-id')) {
+            const productId = (index + 1).toString();
+            productDiv.setAttribute('data-product-id', productId);
+            
+            // Also update the cart icon link
+            const cartIcon = productDiv.querySelector('.ai');
+            if (cartIcon && !cartIcon.getAttribute('data-product-id')) {
+                cartIcon.setAttribute('data-product-id', productId);
+            }
+        }
+    });
+    
+    // Add click event listeners to dropdown items (removing previous listeners to avoid duplicates)
+    const dropdownItems = document.querySelectorAll('details > div > p');
+    dropdownItems.forEach(item => {
+        // Remove existing onclick to avoid conflicts
+        item.removeAttribute('onclick');
+        item.addEventListener('click', function() {
+            const category = this.textContent.toLowerCase();
+            filterProducts(category);
+        });
+    });
+    
+    // Add fadeIn animation CSS if not already present
+    if (!document.querySelector('#filter-animation-styles')) {
+        const style = document.createElement('style');
+        style.id = 'filter-animation-styles';
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Update cart count on page load
+    updateCartCount();
+    
+    // Display cart if on cart page
+    if (document.getElementById('cart-items')) {
+        displayCart();
+    }
+});
