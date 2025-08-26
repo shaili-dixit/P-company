@@ -466,6 +466,72 @@ margin: 20px 35%;
     flex-wrap: wrap;
 
 }
+/* Contact Form Section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #f4f6fa;
+}
+
+.contact-card {
+  background: #13296b; /* dark blue */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-card h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Input fields */
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #3498db;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: #ccc;
+}
+
+/* Button */
+.contact-card button {
+  margin-top: 20px;
+  background: #f0c89f;
+  color: #13296b;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.contact-card button:hover {
+  background: #e6b07f;
+}
+
 #product1 .product:hover{
     border-radius: 35px;
     box-shadow: 5px 5px 5px 1px rgba(226, 210, 210, 0.475);
@@ -1837,7 +1903,7 @@ body.dark-mode .fe-box:hover img {
 }
 /* Contact Header Section */
 .contact-header {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* gradient background */
+    background: linear-gradient(to right, #394787, #74a7b4); /* gradient background */
     color: #fff; /* white text */
     padding: 100px 20px;
     text-align: center;
