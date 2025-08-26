@@ -1334,6 +1334,11 @@ padding-bottom: 15px;
     background-color: rgba(110, 199, 22, 0.789);
     color: #1a1a1a;
 }
+#already_acc{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
 /* Styles for the result message */
 .hidden {
     display: none;
@@ -2785,81 +2790,212 @@ body.dark-mode {
 header.dark-mode {
   background-color: #1f1f1f;
 }
-
-
-
 /* Category Filter Buttons Container */
 #category-filters {
-  text-align: center;
-  margin: 3rem 0 2rem 0;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
 }
-
-/* Buttons Wrapper */
-.filter-btns {
-  display: inline-flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Individual Buttons */
-.filter-btn {
-  padding: 0.6rem 1.8rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none; /* removing old border */
-  border-radius: 50px;
-  background: linear-gradient(145deg, #ff7e5f, #feb47b); /* gradient look */
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover Effect */
-.filter-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* Active State */
-.filter-btn.active {
-  background: linear-gradient(145deg, #ff4b5c, #ff6b6b);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-}
-
 /* Optional: Ripple Animation on Click */
 .filter-btn::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(255,255,255,0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 50px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50px;
 }
-
 .filter-btn:active::after {
-  opacity: 1;
-  transition: 0s;
+    opacity: 1;
+    transition: 0s;
 }
-
 /* Dark Mode Adjustments */
 body.dark .filter-btn {
-  background: linear-gradient(145deg, #555, #777);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(145deg, #555, #777);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
 body.dark .filter-btn:hover {
-  background: linear-gradient(145deg, #666, #888);
+    background: linear-gradient(145deg, #666, #888);
+}
+body.dark .filter-btn.active {
+    background: linear-gradient(145deg, #ff4b5c, #ff6b6b);
 }
 
-body.dark .filter-btn.active {
-  background: linear-gradient(145deg, #ff4b5c, #ff6b6b);
+/* sign-in page */
+#sign-in_body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg") no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  .signin-box {
+    width: 350px;
+    padding: 25px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* slight shadow */
+  }
+  .signin-heading {
+    margin-bottom: 20px;
+  }
+  
+  .signin-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .signin-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  
+  .signin-forgot-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .signin-forgot-text a {
+    margin-left: 70px;
+    text-decoration: none;
+    color: blue;
+  }
+  
+  .signin-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .signin-btn:hover {
+    background: #555;
+  }
+  .login-btn {
+    display: inline-block;
+    text-align: center;
+    background-color: #007bff;  
+    color: white;                
+    padding: 12px 20px;     
+    border-radius: 6px;       
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;   
+    width: 100%;                
+    box-sizing: border-box;      
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;   
+    transform: scale(1.03);      
+  }
+
+/* forgot password page */
+#resetpass-body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#resetpass-form {
+    background-color: rgba(255, 255, 255, 0.6); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+}
+
+#resetpass-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#resetpass-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #222;
+}
+
+.resetpass-password-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.resetpass-password-wrapper input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.resetpass-email-wrapper input{
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+.resetpass-password-wrapper input:focus {
+    border-color: #007BFF;
+}
+.resetpass-toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+#resetpass-button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#resetpass-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
 }
