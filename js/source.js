@@ -175,77 +175,92 @@ const products = {
     '16': {
         title: 'White Hoodie',
         price: 1499,
+        category: 'tops',
         image: 'https://images.pexels.com/photos/8217415/pexels-photo-8217415.jpeg?_gl=1*s62gf1*_ga*ODE1NjcxMTEuMTc1NTY5MjIzNA..*_ga_8JE65Q40S6*czE3NTU2OTIyMzMkbzEkZzEkdDE3NTU2OTIzMzEkajU5JGwwJGgw',
     },
     '17': {
         title: 'Sport Shoes',
         price: 2499,
+        category: 'shoes',
         image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?_gl=1*3b804l*_ga*ODE1NjcxMTEuMTc1NTY5MjIzNA..*_ga_8JE65Q40S6*czE3NTU2OTIyMzMkbzEkZzEkdDE3NTU2OTI2ODgkajU2JGwwJGgw',
     },
     '18': {
         title: 'Kurta',
         price: 999,
+        category: 'kurta',
         image: 'https://thumbs.dreamstime.com/b/colorful-indian-kurta-isolated-white-background-perfect-fashion-ethnic-wear-cultural-content-colorful-indian-kurta-364238177.jpg',
     },
     '19': {
         title: 'Kids Shirt',
         price: 349,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '20': {
         title: 'Plain T-Shirt',
         price: 199,
+        category: 'shirts',
         image: 'https://media.istockphoto.com/id/1218948901/photo/black-t-shirt-mock-up-on-wooden-hanger-rear-side-view.jpg?s=1024x1024&w=is&k=20&c=7w1NVUo15ytsI19yl4FTszPfVZlaL2CAVJqfcqFKM0U=',
     },
     '21': {
         title: 'Jeans',
         price: 1299,
+        category: 'pants',
         image: 'https://images.unsplash.com/photo-1718252540511-e958742e4165?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '22': {
         title: 'Printed T-Shirts',
         price: 449,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1628071645679-101ea5fad26f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '23': {
         title: 'Sneakers',
         price: 599,
+        category: 'shoes',
         image: 'https://images.pexels.com/photos/1280064/pexels-photo-1280064.jpeg?_gl=1*1rtl0px*_ga*ODE1NjcxMTEuMTc1NTY5MjIzNA..*_ga_8JE65Q40S6*czE3NTU2OTIyMzMkbzEkZzEkdDE3NTU2OTgwMjkkajMzJGwwJGgw',
     },
     '24': {
         title: 'High Heels',
         price: 1199,
+        category: 'shoes',
         image: 'https://cdn.pixabay.com/photo/2020/02/21/09/07/sandals-4866934_1280.jpg',
     },
     '25': {
         title: 'Formal Shirts',
         price:849,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1602810319250-a663f0af2f75?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '26': {
         title: 'Anime Printed T-Shirts',
         price: 699,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1627913363993-95b23378265e?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '27': {
         title: 'Casual T-Shirts',
         price: 399,
+        category: 'shirts',
         image: 'https://plus.unsplash.com/premium_photo-1755534537506-5528462e4e1f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     '28': {
         title: 'Casual T-shirt',
         price: 249,
+        category: 'shirts',
         image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         
     },
     '29': {
         title: 'Jeans',
         price: 749,
+        category: 'pants',
         image: 'https://images.unsplash.com/photo-1721637222188-fa7bf56ceaf5?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',   
     },
     '30': {
         title: 'Anime Printed Hoodie',
         price: 949,
+        category: 'tops',
         image: 'https://images.unsplash.com/photo-1659082056845-3b839c7551bf?q=80&w=369&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
 };
@@ -471,23 +486,78 @@ function performSearch() {
 
 // Filter functionality
 function filterProducts(category) {
-    const productContainer = document.getElementById('product1');
-    if (!productContainer) return; // Exit if not on shop page
+    // Get all product sections
+    const productSections = ['product1', 'product2', 'product3'];
     
-    const productDivs = productContainer.querySelectorAll('.product');
-    
-    productDivs.forEach(productDiv => {
-        const productId = productDiv.getAttribute('data-product-id');
-        const product = products[productId];
+    productSections.forEach(sectionId => {
+        const productContainer = document.getElementById(sectionId);
+        if (!productContainer) return;
         
-        if (!product) return;
+        const productDivs = productContainer.querySelectorAll('.product');
         
-        if (category === 'all' || product.category === category.toLowerCase()) {
-            productDiv.style.display = 'block';
-            productDiv.style.animation = 'fadeIn 0.5s ease';
-        } else {
-            productDiv.style.display = 'none';
-        }
+        productDivs.forEach((productDiv, index) => {
+            // Get product title from the h6 element inside the product div
+            const titleElement = productDiv.querySelector('.des h6');
+            const productTitle = titleElement ? titleElement.textContent.toLowerCase().trim() : '';
+            
+            // Show all products if 'all' is selected
+            if (category === 'all') {
+                productDiv.style.display = 'block';
+                productDiv.style.animation = 'fadeIn 0.5s ease';
+                return;
+            }
+            
+            const categoryLower = category.toLowerCase();
+            
+            // Define keyword mappings for better filtering
+            const keywordMappings = {
+                'pants': ['pants', 'trouser', 'jeans', 'pant'],
+                'shirts': ['shirt', 'tshirt', 't-shirt', 'polo', 'sleeve'],
+                'tops': ['top', 'hoodie', 'coat', 'dress', 'frock'],
+                'lower': ['lower', 'bottom', 'trouser', 'pant', 'jeans', 'frock'],
+                'shoes': ['shoe', 'sneaker', 'heel', 'sandal', 'boot'],
+                'kurta': ['kurta', 'ethnic']
+            };
+            
+            let shouldShow = false;
+            
+            // Check keyword mappings
+            if (keywordMappings[categoryLower]) {
+                const keywords = keywordMappings[categoryLower];
+                shouldShow = keywords.some(keyword => 
+                    productTitle.includes(keyword)
+                );
+            }
+            
+            // Direct keyword search in title
+            if (productTitle.includes(categoryLower)) {
+                shouldShow = true;
+            }
+            
+            // Additional specific checks for better matching
+            if (categoryLower === 'pants' && (productTitle.includes('jean') || productTitle.includes('trouser'))) {
+                shouldShow = true;
+            }
+            
+            if (categoryLower === 'shirts' && (productTitle.includes('shirt') || productTitle.includes('sleeve'))) {
+                shouldShow = true;
+            }
+            
+            if (categoryLower === 'tops' && (productTitle.includes('top') || productTitle.includes('hoodie') || productTitle.includes('coat') || productTitle.includes('dress'))) {
+                shouldShow = true;
+            }
+            
+            if (categoryLower === 'lower' && (productTitle.includes('frock') || productTitle.includes('dress'))) {
+                shouldShow = true;
+            }
+            
+            if (shouldShow) {
+                productDiv.style.display = 'block';
+                productDiv.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                productDiv.style.display = 'none';
+            }
+        });
     });
     
     // Close the dropdown after selection
