@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,44 +29,75 @@
       color: #00dfc4;
     }
 
-    /* Privacy Section */
-   .privacy-container {
-  max-width: 1000px;
-  margin: 120px auto 40px; /* pushed down from top */
-  padding: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-}
+    /* Enhanced Privacy Section */
+    .privacy-container {
+      max-width: 950px;
+      margin: 120px auto 50px;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
     .privacy-container h1 {
-      font-size: 2rem;
-      color: #222;
+      font-size: 2.2rem;
+      color: #111827;
       border-bottom: 3px solid #00dfc4;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      text-align: center;
     }
-    .privacy-container h2 {
-      margin-top: 25px;
+
+    .privacy-block {
+      margin-bottom: 30px;
+      padding: 15px 20px;
+      border-left: 4px solid #00dfc4;
+      background: #f9fafc;
+      border-radius: 8px;
+    }
+
+    .privacy-block h2 {
+      font-size: 1.4rem;
       color: #111827;
-      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
-    .privacy-container p, 
-    .privacy-container ul {
-      margin-top: 10px;
-      color: #555;
+
+    .privacy-block ul {
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .privacy-block ul li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
       font-size: 1rem;
+      color: #555;
     }
-    .privacy-container ul {
-      list-style: disc inside;
-      padding-left: 15px;
-    }
-    .privacy-container a {
+
+    .privacy-block ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
       color: #00dfc4;
       font-weight: bold;
+    }
+
+    .privacy-container a {
+      color: #00dfc4;
+      font-weight: 600;
       text-decoration: none;
     }
+
     .privacy-container a:hover {
       text-decoration: underline;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Footer (same as your site) */
@@ -115,8 +146,6 @@
 
   <link rel="stylesheet" href="/style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
 
   <!-- Header -->
   <header class="header">
@@ -164,34 +193,60 @@
       <i id="bar" class="fa fa-outdent"></i>
     </div>
   </header>
+
   <!-- Privacy Policy -->
   <section class="privacy-container">
     <h1>Privacy Policy</h1>
-    <p>At <strong>P Company</strong>, we value your trust. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website and services.</p>
+    <p>
+      At <strong>P Company</strong>, your trust is our priority. This Privacy Policy
+      explains how we collect, use, and protect your personal information when
+      you use our website and services.
+    </p>
 
-    <h2>Information We Collect</h2>
-    <ul>
-      <li>Your name, email, and contact details when creating an account or making purchases.</li>
-      <li>Order history and preferences to improve our product recommendations.</li>
-      <li>Browser/device data for security and analytics.</li>
-    </ul>
+    <div class="privacy-block">
+      <h2>📌 Information We Collect</h2>
+      <ul>
+        <li><strong>Account Details:</strong> Your name, email, and contact details when creating an account or making purchases.</li>
+        <li><strong>Order History:</strong> Purchase records and preferences to improve product recommendations.</li>
+        <li><strong>Technical Data:</strong> Browser/device data for security, analytics, and better service experience.</li>
+      </ul>
+    </div>
 
-    <h2>How We Use Your Data</h2>
-    <ul>
-      <li>To process orders and deliver products.</li>
-      <li>To personalize your shopping experience.</li>
-      <li>To send promotional updates (only if you opt-in).</li>
-      <li>To ensure website security and fraud prevention.</li>
-    </ul>
+    <div class="privacy-block">
+      <h2>⚙️ How We Use Your Data</h2>
+      <ul>
+        <li>✔️ To process orders and ensure timely product delivery.</li>
+        <li>✔️ To personalize your shopping experience with relevant offers.</li>
+        <li>✔️ To send promotional updates (only if you opt-in).</li>
+        <li>✔️ To ensure website security and prevent fraud.</li>
+      </ul>
+    </div>
 
-    <h2>Data Protection</h2>
-    <p>We use advanced encryption and secure servers to protect your data. We never sell your personal data to third parties.</p>
+    <div class="privacy-block">
+      <h2>🔒 Data Protection</h2>
+      <p>
+        We use <strong>advanced encryption</strong> and secure servers to safeguard
+        your data. Your personal information is never sold or shared with third
+        parties without consent.
+      </p>
+    </div>
 
-    <h2>Your Rights</h2>
-    <p>You may request access, update, or deletion of your personal data anytime. For EU users, we comply with <strong>GDPR</strong> requirements.</p>
+    <div class="privacy-block">
+      <h2>📝 Your Rights</h2>
+      <p>
+        You may request <strong>access, updates, or deletion</strong> of your personal
+        data at any time. For EU users, we comply fully with
+        <strong>GDPR</strong> requirements.
+      </p>
+    </div>
 
-    <h2>Contact Us</h2>
-    <p>If you have any privacy-related concerns, please contact us at <a href="mailto:contact@pcompany.com">contact@pcompany.com</a>.</p>
+    <div class="privacy-block">
+      <h2>📧 Contact Us</h2>
+      <p>
+        If you have any privacy-related concerns, please contact us at
+        <a href="mailto:contact@pcompany.com">contact@pcompany.com</a>.
+      </p>
+    </div>
   </section>
 
   <!-- Footer -->
