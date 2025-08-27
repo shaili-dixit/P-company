@@ -51,6 +51,7 @@
     <div class="dark-mode-toggle" id="themeToggle">🌞</div>
 </header>
 
+
 <!-- Category Filter Buttons -->
 <section id="category-filters" class="section">
   <div class="filter-btns">
@@ -61,12 +62,58 @@
   </div>
 </section>
 
+<div class="shop-container">
+
+  <!-- Sidebar Filters -->
+  <aside class="filters">
+    <h3>Filters</h3>
+
+    <!-- Price Filter -->
+    <div class="filter-group">
+      <h4>Price</h4>
+      <label><input type="radio" name="price" value="0-499"> Under ₹500</label><br>
+      <label><input type="radio" name="price" value="500-999"> ₹500 - ₹999</label><br>
+      <label><input type="radio" name="price" value="1000-1999"> ₹1000 - ₹1999</label><br>
+      <label><input type="radio" name="price" value="2000-99999"> Above ₹2000</label>
+    </div>
+
+    <!-- Size Filter -->
+    <div class="filter-group">
+      <h4>Size</h4>
+      <label><input type="checkbox" name="size" value="S"> S</label><br>
+      <label><input type="checkbox" name="size" value="M"> M</label><br>
+      <label><input type="checkbox" name="size" value="L"> L</label><br>
+      <label><input type="checkbox" name="size" value="XL"> XL</label>
+    </div>
+
+    <!-- Rating Filter -->
+    <div class="filter-group">
+      <h4>Customer Rating</h4>
+      <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐ & above</label><br>
+      <label><input type="radio" name="rating" value="3"> ⭐⭐⭐ & above</label><br>
+      <label><input type="radio" name="rating" value="2"> ⭐⭐ & above</label><br>
+      <label><input type="radio" name="rating" value="1"> ⭐ & above</label>
+    </div>
+
+    <button id="clear-filters">
+      Clear All
+    </button>
+  </aside>
+  
+
+
+
 <!-- Products Section -->
 <section id="product1" class="section"> 
   <div class="product-container">
     
     <!-- Men Products -->
-    <div class="product" data-category="men">
+    <div class="product"
+     data-category="men"
+     data-price="299" 
+     data-size="L" 
+     data-rating="4"
+     >
       <a href="singleproduct.html?product=1">
         <img src="https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=" alt="Product 1">
         <div class="des">
@@ -82,7 +129,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="men">
+    <div class="product" data-category="men"
+    data-price="399" 
+     data-size="XL" 
+     data-rating="5">
       <a href="singleproduct.html?product=2">
         <img src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1988&q=80" alt="Product 2">
         <div class="des">
@@ -98,7 +148,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="men">
+    <div class="product" data-category="men"
+    data-price="249" 
+     data-size="M" 
+     data-rating="3">
       <a href="singleproduct.html?product=12">
         <img src="https://img3.junaroad.com/uiproducts/20165393/zoom_0-1691736139.jpg" alt="Product 12">
         <div class="des">
@@ -114,7 +167,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="men">
+    <div class="product" data-category="men"
+    data-price="349" 
+     data-size="XL" 
+     data-rating="4">
       <a href="singleproduct.html?product=5">
         <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=60" alt="Product 5">
         <div class="des">
@@ -130,7 +186,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="men">
+    <div class="product" data-category="men"
+    data-price="249" 
+     data-size="L" 
+     data-rating="5">
       <a href="singleproduct.html?product=15">
         <img src="https://media.istockphoto.com/id/173867932/photo/red-football-shirt.jpg?s=1024x1024&w=is&k=20&c=qggoJiI6Ldj6WkBn744yjaYSqfl82d1-9ZnBARKXFGc=" alt="Product 15">
         <div class="des">
@@ -147,7 +206,10 @@
     </div>
 
     <!-- Women Products -->
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="599" 
+     data-size="L" 
+     data-rating="4">
       <a href="singleproduct.html?product=3">
         <img src="https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=3087&q=80" alt="Product 3">
         <div class="des">
@@ -163,7 +225,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="799" 
+     data-size="XL" 
+     data-rating="3">
       <a href="singleproduct.html?product=4">
         <img src="https://media.istockphoto.com/id/1222396502/photo/gorgeous-young-female-in-classic-suit-black-shoes-and-grey-coat-vintage-chair-womans-clothes.jpg?s=1024x1024&w=is&k=20&c=QuLFE2xi9ZA81cjnGPF76otE_UCvxRTIrW0_O2aEwX4=" alt="Product 4">
         <div class="des">
@@ -179,7 +244,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="299" 
+     data-size="L" 
+     data-rating="4">
       <a href="singleproduct.html?product=7">
         <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/products/TP592REDD_M2.jpg?v=1746621912" alt="Product 7">
         <div class="des">
@@ -195,7 +263,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="299" 
+     data-size="L" 
+     data-rating="3">
       <a href="singleproduct.html?product=8">
         <img src="https://cdn.shopify.com/s/files/1/0486/0634/7416/files/FSDR1079BRPR_2.jpg?v=1696505392" alt="Product 8">
         <div class="des">
@@ -211,7 +282,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="999" 
+     data-size="L" 
+     data-rating="5">
       <a href="singleproduct.html?product=9">
         <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/tr:w-960,/12e1034TWDR705.jpg?rnd=20200526195200" alt="Product 9">
         <div class="des">
@@ -227,7 +301,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="699" 
+     data-size="L" 
+     data-rating="4">
       <a href="singleproduct.html?product=10">
         <img src="https://m.media-amazon.com/images/I/718J1laiICL._AC_UY1100_.jpg" alt="Product 10">
         <div class="des">
@@ -243,7 +320,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="449" 
+     data-size="M" 
+     data-rating="3">
       <a href="singleproduct.html?product=11">
         <img src="https://img3.junaroad.com/uiproducts/19670369/zoom_0-1681130955.jpg" alt="Product 11">
         <div class="des">
@@ -259,7 +339,10 @@
       </a>
     </div>
 
-    <div class="product" data-category="women">
+    <div class="product" data-category="women"
+    data-price="799" 
+     data-size="L" 
+     data-rating="4">
       <a href="singleproduct.html?product=14">
         <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product 14">
         <div class="des">
@@ -276,7 +359,10 @@
     </div>
 
     <!-- Kid Products -->
-    <div class="product" data-category="kid">
+    <div class="product" data-category="kid"
+    data-price="499" 
+     data-size="L" 
+     data-rating="4">
       <a href="singleproduct.html?product=6">
         <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=60" alt="Product 6">
         <div class="des">
@@ -296,6 +382,8 @@
 </section>
 
 
+
+</div>
 <!-- Pagination -->
 <section id="pagination">
     <a href="#">1</a>
@@ -412,6 +500,8 @@ function attachCartEvents(){
     });
 }
 
+
+
 document.addEventListener('DOMContentLoaded',()=>{
     renderProducts();
     const cartIcon=document.getElementById('lg-bag');
@@ -460,6 +550,57 @@ document.addEventListener('DOMContentLoaded',()=>{
       });
     });
   });
+
+// ---------------- Myntra-style Filters ----------------
+const filterInputs = document.querySelectorAll('.filters input');
+const clearBtn = document.getElementById('clear-filters');
+const allProducts = document.querySelectorAll('.product');
+
+function applyFilters() {
+  let selectedPrice = document.querySelector("input[name='price']:checked")?.value;
+  let selectedSizes = [...document.querySelectorAll("input[name='size']:checked")].map(s=>s.value);
+  let selectedRating = document.querySelector("input[name='rating']:checked")?.value;
+  let activeCategory = document.querySelector(".filter-btn.active")?.dataset.filter || "all";
+
+  allProducts.forEach(p => {
+    let price = parseInt(p.getAttribute("data-price"));
+    let size = p.getAttribute("data-size");
+    let rating = parseInt(p.getAttribute("data-rating"));
+    let category = p.getAttribute("data-category");
+
+    let show = true;
+
+    // Category check (your existing buttons)
+    if (activeCategory !== "all" && category !== activeCategory) show = false;
+
+    // Price check
+    if (selectedPrice) {
+      let [min,max] = selectedPrice.split("-").map(Number);
+      if (price < min || price > max) show = false;
+    }
+
+    // Size check
+    if (selectedSizes.length > 0 && !selectedSizes.includes(size)) show = false;
+
+    // Rating check
+    if (selectedRating && rating < Number(selectedRating)) show = false;
+
+    p.style.display = show ? "block" : "none";
+  });
+}
+
+// Event listeners
+filterInputs.forEach(f => f.addEventListener("change", applyFilters));
+clearBtn.addEventListener("click", () => {
+  document.querySelectorAll(".filters input").forEach(f => f.checked = false);
+  applyFilters();
+});
+
+// Also reapply filters whenever category buttons are used
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+  btn.addEventListener("click", applyFilters);
+});
+
 
 
 </script>
