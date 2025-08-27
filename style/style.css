@@ -2,23 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    line-height: 1.6;
-    color: #333;
-    background: #ffffff;
-}
-
-/* Section spacing */
-section {
-    margin: 0;
-    padding: 0;
+    font-family: Courier, monospace;
 }
 .header {
     width: 100%;
@@ -418,637 +402,328 @@ margin: 20px 35%;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    margin: 0;
 }
 
 .fe-box {
-    width: 240px;
-    height: 240px;
-    padding: 30px 20px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
     margin: 25px;
     text-align: center;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 0 10px 30px rgba(8, 129, 120, 0.1);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.fe-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.1), rgba(13, 148, 136, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.fe-box:hover::before {
-    opacity: 1;
-}
-
-.fe-box > * {
-    position: relative;
-    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(226, 210, 210, 0.475);
+    border: rgba(245, 245, 245, 0.208);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer; /* Add cursor pointer on hover */
 }
 
 .fe-box img {
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    padding-bottom: 0;
+    
 }
  
 .fe-box h6 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin: 0;
-    padding: 12px 20px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #088178, #0d9488);
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    line-height: 1;
+    color: rgba(19, 19, 17, 0.56);
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: inline-block;
+    background-color: rgb(206, 171, 177);
 }
 
+/* Apply hover effect to all .fe-box elements */
 .fe-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(8, 129, 120, 0.2);
-    border-color: #088178;
+    box-shadow: 10px 10px 5px rgba(226, 210, 210, 0.475);
 }
 
-.fe-box:hover img {
-    transform: scale(1.1);
+/* Define specific background colors for each fe-box */
+.fe-box:nth-child(2) h6 {
+    background-color: bisque;
 }
 
-.fe-box:hover h6 {
-    background: linear-gradient(135deg, #0d9488, #088178);
-    box-shadow: 0 8px 20px rgba(8, 129, 120, 0.3);
+.fe-box:nth-child(3) h6 {
+    background-color: aqua;
 }
 
-/* Remove specific nth-child colors as we're using consistent design */
-.fe-box:nth-child(2) h6,
-.fe-box:nth-child(3) h6,
-.fe-box:nth-child(4) h6,
+.fe-box:nth-child(4) h6 {
+    background-color: burlywood;
+}
+
 .fe-box:nth-child(5) h6 {
-    background: linear-gradient(135deg, #088178, #0d9488);
+    background-color: rgba(255, 228, 196, 0.504);
 }
 #product1 {
     text-align: center;
-    padding: 80px 0;
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
 }
-
-#product1 h2.features {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-#product1 h2.features::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(135deg, #088178, #0d9488);
-    border-radius: 2px;
-}
-
 #product1 .product-container{
     display: flex;
     text-align: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
-    padding: 0 40px;
+
 }
+/* Contact Form Section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #f4f6fa;
+}
+
+.contact-card {
+  background: #13296b; /* dark blue */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-card h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Input fields */
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #3498db;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: #ccc;
+}
+
+/* Button */
+.contact-card button {
+  margin-top: 20px;
+  background: #f0c89f;
+  color: #13296b;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.contact-card button:hover {
+  background: #e6b07f;
+}
+
 #product1 .product:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(8, 129, 120, 0.15);
-    border: 2px solid #088178;
+    border-radius: 35px;
+    box-shadow: 5px 5px 5px 1px rgba(226, 210, 210, 0.475);
 }
-
 #product1 .product{
-    width: 280px;
-    min-width: 260px;
-    padding: 20px;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-}
+    width: 23%;
+    /* min-width:230px; */
+    height: 5%;
+    font-size: 20px;
 
-#product1 .product::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.05), rgba(13, 148, 136, 0.02));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+    padding: 5px 10px;
+    border-radius: 30px;
+    /* border-radius: 50px solid rgba(255, 255, 255, 0.391); */
 
-#product1 .product:hover::before {
-    opacity: 1;
+    box-shadow: 3px 3px 3px 3px rgba(226, 210, 210, 0.475);
+    margin: 25px 20px;
 }
-
-#product1 .product > * {
-    position: relative;
-    z-index: 2;
+#product1 h2{
+    font-size: 40px;
+    background-color: aqua;
 }
-
 #product1 .product a{
     text-decoration: none;
     width:100%;
-    display: block;
 }
-
 #product1 .product a img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+    width:100%;
+    padding: 0;
+    border-radius: 20px;
 }
-
-#product1 .product:hover img {
-    transform: scale(1.05);
-}
-
-#product1 .product .des{
+#product1 .product  .des{
     text-align: start;
-    padding-top: 10px;
 }
-
-#product1 .product .des h6{
-    font-size: 18px;
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
+#product1 .product  .des h6{
+    font-size: 16px;
+    color: #1a1a1a;
 }
-
-#product1 .product:hover .des h6 {
-    color: #088178;
-}
-
 #product1 .product .des i{
-    font-size: 14px;
-    color: #ffd700;
-    margin-right: 2px;
+font-size: 15px;
+color: rgba(255, 217, 0, 0.858);
 }
+#product1 .product .des .ai i{
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 40px;
+    color: #088178;
+    background-color: #e8f6ea;
+    border-radius: 25px;
+}
+#product1 .product a .des h4{
+    font-size: 15px;
+    font-weight: 800;
+}
+#banner{
+margin: 40px 0;
+display: flex;
+font-size: 40px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-image: url('https://media.istockphoto.com/id/1413355572/photo/discount-word-made-from-realistic-gold-with-star-on-red-background-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=GhpptaGZI7UVYTG9rZKrV3yn80ReZMWxOYPPaHzLtDk=');
+width: 100%;
+height: 40vh;
+background-size: cover;
+}
+button.normal{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px ;
+    outline: none;
+    transition: 0.2s;
+    padding: 15px 30px;
+    margin: 25px ;
 
-#product1 .product .des .price-cart {
+   
+}
+button:hover{
+    background-color: #088178;
+}
+#banner h2{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+}
+#banner h4{
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+#sm-banner{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
+    align-items: flex-start;
+    height: 100vh;
+   background-color: rgb(255, 251, 234);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    /* width: 100%; */
+    /* flex-wrap: wrap; */
 }
-
-#product1 .product .des .ai i{
-    width: 45px;
-    height: 45px;
-    font-weight: 600;
-    font-size: 18px;
-    color: white;
-    background: linear-gradient(135deg, #088178, #0d9488);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(8, 129, 120, 0.3);
-}
-
-#product1 .product .des .ai i:hover {
-    background: linear-gradient(135deg, #0d9488, #088178);
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(8, 129, 120, 0.4);
-}
-
-/* Add to Cart Button Styles */
-.add-to-cart-btn {
-    background: linear-gradient(135deg, #088178, #0d9488);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 8px 15px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(8, 129, 120, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    min-width: 120px;
-    justify-content: center;
-}
-
-.add-to-cart-btn:hover {
-    background: linear-gradient(135deg, #0d9488, #088178);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(8, 129, 120, 0.4);
-}
-
-.add-to-cart-btn i {
-    font-size: 16px;
-    margin: 0;
-}
-
-.add-to-cart-btn span {
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* Fix product card interaction */
-#product1 .product {
-    position: relative;
-}
-
-#product1 .product .add-to-cart-btn {
-    position: relative;
-    z-index: 10;
-    pointer-events: all;
-    margin: 15px 0 10px 0;
-}
-
-/* Special styling for buttons placed below stars */
-#product1 .product .des .stars + .add-to-cart-btn {
-    margin-top: 15px;
-    margin-bottom: 15px;
+#sm-banner .top-container{
     width: 100%;
-    justify-content: center;
-    display: flex;
+    height: 40%;
+     display: flex;
+    justify-content:space-around;
     align-items: center;
-}
-
-/* Ensure proper spacing for price section after button */
-#product1 .product .des .add-to-cart-btn + .price-cart {
-    margin-top: 10px;
-}
-
-#product1 .product .des h4{
-    font-size: 20px;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
-}
-/* Hero Section - New Structure */
-#hero, .hero-banner {
-    margin: 0;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(8, 129, 120, 0.7)), url('https://media.istockphoto.com/id/1413355572/photo/discount-word-made-from-realistic-gold-with-star-on-red-background-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=GhpptaGZI7UVYTG9rZKrV3yn80ReZMWxOYPPaHzLtDk=');
+}
+.top-container .content{
     width: 100%;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.8), rgba(13, 148, 136, 0.6));
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.hero-text {
-    text-align: center;
-}
-
-.hero-title, h1.hero-title {
-    font-size: 4rem;
-    color: white;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-subtitle {
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 400;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    margin-bottom: 15px;
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.hero-buttons {
+    height: 30%;
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease-out 0.6s both;
+    justify-content:center;
+    align-items: center;
 }
-
-.btn-primary, .btn-secondary {
-    font-size: 18px;
+#main-heading{
+    margin: 30px;
+    font-weight: 400;
+    font-size: 30px
+}
+#btn-limited{
+    padding: 16px 24px;
+    color: white;
     font-weight: 600;
-    cursor: pointer;
-    border-radius: 50px;
-    outline: none;
-    transition: all 0.3s ease;
-    padding: 15px 40px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
+    font-size: 16px;
+    border: none;
+    background-color: #ff8072;
+    border-radius:25px;
 }
-
-.btn-primary {
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    color: #088178;
-    border: 2px solid #088178;
-    box-shadow: 0 4px 15px rgba(8, 129, 120, 0.2);
+.content img{
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
 }
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #088178, #0d9488);
-    transition: all 0.3s ease;
-    z-index: -1;
+#sm-banner .banner-box:nth-child(2){
+display: flex;
+font-size: 40px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 40vh;
+background-size: cover;
+background-image: url(https://static.vecteezy.com/system/resources/previews/027/550/118/non_2x/girl-with-shopping-bag-free-photo.jpg);
 }
-
-.btn-primary:hover::before {
-    left: 0;
+#sm-banner .banner-box:nth-child(3){
+display: flex;
+font-size: 40px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  
+background-image: url(https://static.vecteezy.com/system/resources/previews/017/342/705/non_2x/excited-young-women-enjoying-shopping-carrying-many-bags-of-many-colors-free-photo.jpg);
+ 
+height: 40vh;
+background-size: cover;
 }
-
-.btn-primary:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(8, 129, 120, 0.4);
-    border-color: #0d9488;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-}
-
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-    border-color: white;
-}
-
-.highlight {
-    color: #ffd700;
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Button Styles */
-button.normal {
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    color: #088178;
-    border: 2px solid #088178;
-    border-radius: 50px;
-    outline: none;
-    transition: all 0.3s ease;
-    padding: 15px 40px;
-    margin: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(8, 129, 120, 0.2);
-    animation: fadeInUp 1s ease-out 0.6s both;
-    position: relative;
-    overflow: hidden;
-}
-
-button.normal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #088178, #0d9488);
-    transition: all 0.3s ease;
-    z-index: -1;
-}
-
-button.normal:hover::before {
-    left: 0;
-}
-
-button.normal:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(8, 129, 120, 0.4);
-    border-color: #0d9488;
-}
-/* Legacy Banner Support */
-#banner {
-    margin: 0;
+#sm-banner .banner-box:nth-child(4){
+   
     display: flex;
     font-size: 40px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(8, 129, 120, 0.7)), url('https://media.istockphoto.com/id/1413355572/photo/discount-word-made-from-realistic-gold-with-star-on-red-background-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=GhpptaGZI7UVYTG9rZKrV3yn80ReZMWxOYPPaHzLtDk=');
-    width: 100%;
-    height: 80vh;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/027/550/117/non_2x/girl-with-shopping-bag-free-photo.jpg);
+    height: 40vh;
+    opacity: 0.9;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-#banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.8), rgba(13, 148, 136, 0.6));
-    z-index: 1;
-}
-
-#banner > * {
-    position: relative;
-    z-index: 2;
-}
-#banner h2{
-    font-size: 4rem;
-    color: white;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: fadeInUp 1s ease-out;
-}
-
-#banner h4{
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 400;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
-    max-width: 600px;
-    line-height: 1.5;
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
-#sm-banner{
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 30px;
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    margin: 0;
-}
-
-#sm-banner .banner-box{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 60px 40px;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(13, 148, 136, 0.8)), url('https://static.vecteezy.com/system/resources/thumbnails/016/264/237/small/portrait-of-an-excited-beautiful-girl-wearing-dress-and-sunglasses-holding-shopping-bags-cheerful-young-woman-with-handbag-on-yellow-background-shopaholic-shopping-fashion-free-photo.jpg');
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-#sm-banner .banner-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.8), rgba(13, 148, 136, 0.7));
-    z-index: 1;
-}
-
-#sm-banner .banner-box > * {
-    position: relative;
-    z-index: 2;
-}
-
-#sm-banner .banner-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(8, 129, 120, 0.2);
-}
-
-#sm-banner .banner-box:nth-child(2){
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(13, 148, 136, 0.8)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsRRAddzqVXeTSh60_hedZh1VOTFJBjZIih3FB2c-C-T859R8bkAXNMVrCvJVNO5_g9vk&usqp=CAU');
-    background-size: cover;
-    background-position: center;
-}
-
-#sm-banner .banner-box:nth-child(3){
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(13, 148, 136, 0.8)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zmxhc2glMjBzYWxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60');
-    background-size: cover;
-    background-position: center;
-}
-
+    }
 #sm-banner h4{
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size:30px;
+    font-weight: 300;
+    color: #fff;
 }
 #sm-banner h2{
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size:40px;
+    font-weight: 800;
+    color: #fff;
 }
-
 #sm-banner .banner-box:nth-child(2) h4{
-    color: rgba(255, 255, 255, 0.9);
-}
-
-#sm-banner .banner-box:nth-child(2) h2{
+    font-size:30px;
+    font-weight: 500;
     color: white;
+}
+#sm-banner .banner-box:nth-child(2) h2{
+    font-size:40px;
+    font-weight: 800;
+    color: #ffffff;
 }
 #banner-3{
     display: flex;
@@ -1106,146 +781,6 @@ button.normal:hover {
         font-weight: 500;
         font-size: 20px;
     }
-
-/* Center Banner Styles */
-#center-banner {
-    margin: 60px 0;
-    padding: 0;
-}
-
-#center-banner .center-banner-content {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.9), rgba(13, 148, 136, 0.7)), 
-                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow: hidden;
-    border-radius: 15px;
-    margin: 0 20px;
-}
-
-#center-banner .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(8, 129, 120, 0.8), rgba(13, 148, 136, 0.6));
-    z-index: 1;
-}
-
-#center-banner .banner-text {
-    position: relative;
-    z-index: 2;
-    color: white;
-    max-width: 800px;
-    padding: 20px;
-}
-
-#center-banner .banner-text h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-#center-banner .banner-text h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-#center-banner .banner-text .highlight {
-    color: #fbbf24;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#center-banner .banner-text p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-#center-banner .banner-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-#center-banner .btn-shop,
-#center-banner .btn-explore {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#center-banner .btn-shop {
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: white;
-    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
-}
-
-#center-banner .btn-shop:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(251, 191, 36, 0.4);
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-}
-
-#center-banner .btn-explore {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-#center-banner .btn-explore:hover {
-    background: white;
-    color: #0d9488;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #center-banner .banner-text h1 {
-        font-size: 2.5rem;
-    }
-    
-    #center-banner .banner-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    #center-banner .banner-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    #center-banner .btn-shop,
-    #center-banner .btn-explore {
-        width: 200px;
-        text-align: center;
-    }
-    
-    #center-banner .center-banner-content {
-        margin: 0 10px;
-        height: 60vh;
-    }
-}
-
 /* Base footer styling */
 footer {
     display: flex;
@@ -1798,6 +1333,11 @@ padding-bottom: 15px;
 .signup-form button:hover {
     background-color: rgba(110, 199, 22, 0.789);
     color: #1a1a1a;
+}
+#already_acc{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
 }
 /* Styles for the result message */
 .hidden {
@@ -2414,7 +1954,7 @@ body.dark-mode .fe-box:hover img {
 }
 /* Contact Header Section */
 .contact-header {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* gradient background */
+    background: linear-gradient(to right, #394787, #74a7b4); /* gradient background */
     color: #fff; /* white text */
     padding: 100px 20px;
     text-align: center;
@@ -3199,27 +2739,6 @@ body.dark-mode .product-actions {
     border-radius: 12px;
 }
 
-/* Hero Section Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
 body.dark-mode .product-actions select,
 body.dark-mode .product-actions input[type="number"] {
     background-color: #2c2c2c;
@@ -3271,6 +2790,321 @@ body.dark-mode {
 header.dark-mode {
   background-color: #1f1f1f;
 }
+/* Category Filter Buttons Container */
+#category-filters {
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+/* Optional: Ripple Animation on Click */
+.filter-btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50px;
+}
+.filter-btn:active::after {
+    opacity: 1;
+    transition: 0s;
+}
+/* Dark Mode Adjustments */
+body.dark .filter-btn {
+    background: linear-gradient(145deg, #555, #777);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+body.dark .filter-btn:hover {
+    background: linear-gradient(145deg, #666, #888);
+}
+body.dark .filter-btn.active {
+    background: linear-gradient(145deg, #ff4b5c, #ff6b6b);
+}
 
+/* sign-in page */
+#sign-in_body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg") no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+  }
+  
+  .signin-box {
+    width: 350px;
+    padding: 25px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* slight shadow */
+  }
+  .signin-heading {
+    margin-bottom: 20px;
+  }
+  
+  .signin-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .signin-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  
+  .signin-forgot-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .signin-forgot-text a {
+    margin-left: 70px;
+    text-decoration: none;
+    color: blue;
+  }
+  
+  .signin-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .signin-btn:hover {
+    background: #555;
+  }
+  .login-btn {
+    display: inline-block;
+    text-align: center;
+    background-color: #007bff;  
+    color: white;                
+    padding: 12px 20px;     
+    border-radius: 6px;       
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;   
+    width: 100%;                
+    box-sizing: border-box;      
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;   
+    transform: scale(1.03);      
+  }
 
+/* forgot password page */
+#resetpass-body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
+#resetpass-form {
+    background-color: rgba(255, 255, 255, 0.6); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+}
+
+#resetpass-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#resetpass-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #222;
+}
+
+.resetpass-password-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.resetpass-password-wrapper input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.resetpass-email-wrapper input{
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+.resetpass-password-wrapper input:focus {
+    border-color: #007BFF;
+}
+.resetpass-toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+#resetpass-button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#resetpass-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+/* === Sidebar Filters === */
+.shop-container {
+  display: flex;
+   align-items: flex-start; 
+  gap: 20px;
+  padding: 20px;
+}
+.products {
+  flex: 1;                /* take up the rest of the width */
+  display: grid;          /* product cards in grid */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Sidebar */
+.filters {
+  width: 220px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height: fit-content;
+  position: sticky;
+  top: 80px; /* stays visible while scrolling */
+}
+
+.filters h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  color: #333;
+}
+
+/* Individual filter groups */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Price Slider */
+input[type="range"] {
+  width: 100%;
+  accent-color: #ff3e6c; /* Myntra pink */
+}
+
+/* Clear button */
+#clear-filters {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  background: #ff3e6c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+#clear-filters:hover {
+  background: #e7325d;
+}
+
+/* === Product Section === */
+.category-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-filter button {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-filter button:hover {
+  background: #ff3e6c;
+  color: #fff;
+  border-color: #ff3e6c;
+}
