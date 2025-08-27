@@ -10,44 +10,44 @@
      
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <!-- Logo -->
-    <a href="/" class="logo">
-      <img src="/imag/ logo.jpg" alt="Brand Logo">
-    </a>
-
-    <!-- Category Dropdown -->
-    <details class="category-dropdown">
-      <summary>All</summary>
-      <div class="dropdown-content">
-        <p>Pants</p>
-        <p>Lower</p>
-        <p>Shirts</p>
-        <p>T-Shirts</p>
-        <p>Top</p>
-      </div>
-    </details>
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search products...">
-      <button id="searchIcon" class="search-icon" onclick="performSearch()">
-        <i class="fa fa-search"></i>
-      </button>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-      <ul class="navibar" id="navbar">
-        <li><a href="/index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
-        <li><a href="/shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
-        <li><a href="/about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
-        <li><a href="/contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
-        <li><a href="/sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
-        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
-        <li><i class="fa fa-times-circle" id="close"></i></li>
-      </ul>
+    <!-- Header with your dropdown filter functionality preserved -->
+    <section class="header">
+        <div class="header-left">
+            <a href="#"><img src="/imag/ logo.jpg" alt=""></a>
+            <details>
+                <summary>Categories</summary>
+                <div>
+                    <p onclick="filterProducts('all')">All</p>
+                    <p onclick="filterProducts('pants')">Pants</p>
+                    <p onclick="filterProducts('lower')">Lower</p>
+                    <p onclick="filterProducts('shirts')">Shirts</p>
+                    <p onclick="filterProducts('tops')">Tops</p>
+                    <p onclick="filterProducts('shoes')">Shoes</p>
+                    <p onclick="filterProducts('kurta')">Kurta</p>
+                </div>
+            </details>
+        </div>
+        
+        <div class="header-search">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <span id="searchIcon" class="search-icon" onclick="performSearch()">🔍</span>
+        </div>
+        
+        <ul class="navibar" id="navbar">
+            <li><a href="/index.html" class="active"><span>Home</span><i class="fa fa-home"></i></a></li>
+            <li><a href="/shop.html"><span>Shop</span><i class="fa fa-shopping-cart"></i></a></li>
+            <li><a href="/about.html"><span>About</span><i class="fa fa-info-circle"></i></a></li>
+            <li><a href="/contact.html"><span>Contact</span><i class="fa fa-envelope"></i></a></li>
+            <li><a href="/sign.html"><span>Sign</span><i class="fa fa-user"></i></a></li>
+            <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
+            <i class="fa fa-times-circle" id="close"></i>
+        </ul>
+            
+        <div id="mobile">
+            <a href="cart.html"><i class="fa fa-shopping-basket"></i></a> 
+            <i id="bar" class="fa fa-outdent"></i>
+        </div>
+    </section>
     </nav>
 
     <!-- Mobile Menu -->
@@ -99,7 +99,7 @@
   <div class="product-container">
 
     <!-- Product Card -->
-  <div class="product" onclick="window.location.href='/singleproduct.html?product=1';">
+  <div class="product" data-product-id="1" onclick="window.location.href='/singleproduct.html?product=1';">
   <a href="singleproduct.html?product=1">
     <img src="https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=" alt="Product 1">
     <div class="des">
@@ -121,7 +121,7 @@
 
 
 
-          <div class="product" onclick="window.location.href='/singleproduct.html';">
+          <div class="product" data-product-id="2" onclick="window.location.href='/singleproduct.html';">
     <a href="singleproduct.html?product=2">
         <img src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80" alt="Product 2">
         <div class="des">
@@ -132,29 +132,101 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
-            </div>
-            <div>
-                <h4>₹399</h4>
-                <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-            </div>
         </div>
-    </a>
-</div>
-
-
-           <div class="product" onclick="window.location.href='/singleproduct.html';">
-    <a href="singleproduct.html?product=3">
-        <img src="https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80" alt="Product 3">
-        <div class="des">
-            <h6>Hoodies</h6>
-            <div>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+    </section>
+    
+    <section id="buy">
+        <h2>super deals</h2>
+       <marquee  scrollmount="200000" width="70%" loop="-1"> <p>buy and get  70%off on each item</p></marquee>
+        <h2>hurry up </h2>
+       <a href="/shop.html"> <button>shop now</button></a>
+      </section>
+   
+    <section id ="feature" class="section">
+      
+        <div class="fe-box">
+           <img src="/imag/spin-the-wheel-6873663_1280.webp" alt="">
+           <h6>free spinnig</h6>
+        </div>
+        <div class="fe-box">
+           <img src="/imag/ online order.webp" alt="">
+           <h6>online order</h6>
+        </div>
+        <div class="fe-box">
+           <img src="/imag/ save money.jpg" alt="">
+           <h6>save money</h6>
+        </div>
+        <div class="fe-box">
+           <img src="/imag/ happy sell .webp" alt="">
+           <h6>happy sell</h6>
+        </div>
+        <div class="fe-box">
+           <img src="/imag/ 24_7_support.jpg" alt="">
+           <h6>24/7 support</h6>
+        </div>
+    
+    </section>
+    <section id="product2" class="section" > 
+         <h2 class="features">FEATURE PRODUCT</h2>
+         <div class="product-container">
+            <div class="product" data-product-id="1" onclick="window.location.href='/singleproduct.html';">
+                <a href="singleproduct.html?product=1">
+                    <img src="https://media.istockphoto.com/id/587783998/photo/close-up-of-a-t-shirt.jpg?s=1024x1024&w=is&k=20&c=i0_NxNwqfWf5r76xhaVQ7MaQdWdKAy1y_F5Is3uwyFg=" alt="Product 1">
+                    <div class="des">
+                        <h6>T-shirt</h6>
+                        <div>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                        </div>
+                        <div>
+                         <h4>₹299</h4>
+                        <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                       
+                     </div>
+                </a>
+               </div>
+            <div class="product" data-product-id="2" onclick="window.location.href='/singleproduct.html';">
+                <a href="singleproduct.html?product=2">
+                    <img src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1988&q=80" alt="Product 2">
+                    <div class="des">
+                        <h6>Full seleeve T-shirt</h6>
+                        <div>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                        </div>
+                        <div>
+                         <h4>₹399</h4>
+                          <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                       
+                     </div>
+                </a>
             </div>
-            <div>
+            <div class="product" onclick="window.location.href='/singleproduct.html';">
+                <a href="singleproduct.html?product=3">
+                    <img src="https://images.unsplash.com/photo-1616150840617-a0124ea42a1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80" alt="Product 3">
+                    <div class="des">
+                        <h6>Hoodies</h6>
+                        <div>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                         <i class="fa fa-star"></i>
+                        </div>
+                        <div>
+                         <h4>₹599</h4>
+                          <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                       
+                     </div>
                 <h4>₹599</h4>
                 <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
             </div>
@@ -233,7 +305,7 @@
         <a href="/shop.html"><button class="normal">Explore More</button></a> 
     </div>
 </section>
-<section id="product1" class="section">
+<section id="product3" class="section">
   <h2>NEW ARRIVALS</h2>
   <div class="product-container">
     <div class="product" onclick="window.location.href='/singleproduct.html';">
