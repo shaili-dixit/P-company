@@ -3121,4 +3121,111 @@ body.dark .filter-btn.active {
         font-size: 16px !important;
         margin: 10px !important;
     }
+/* === Sidebar Filters === */
+.shop-container {
+  display: flex;
+   align-items: flex-start; 
+  gap: 20px;
+  padding: 20px;
+}
+.products {
+  flex: 1;                /* take up the rest of the width */
+  display: grid;          /* product cards in grid */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Sidebar */
+.filters {
+  width: 220px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height: fit-content;
+  position: sticky;
+  top: 80px; /* stays visible while scrolling */
+}
+
+.filters h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  color: #333;
+}
+
+/* Individual filter groups */
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Price Slider */
+input[type="range"] {
+  width: 100%;
+  accent-color: #ff3e6c; /* Myntra pink */
+}
+
+/* Clear button */
+#clear-filters {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  background: #ff3e6c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+#clear-filters:hover {
+  background: #e7325d;
+}
+
+/* === Product Section === */
+.category-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-filter button {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-filter button:hover {
+  background: #ff3e6c;
+  color: #fff;
+  border-color: #ff3e6c;
 }
