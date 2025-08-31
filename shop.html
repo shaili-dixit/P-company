@@ -7,7 +7,7 @@
 
 <!-- Font Awesome -->
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
- <link rel="stylesheet" href="/style/style.css">            
+ <link rel="stylesheet" href="style/style.css">            
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />     
 
 
@@ -16,7 +16,7 @@
 
 <!-- Header Section -->
 <header class="header">
-    <a href="#" class="logo"><img src="/imag/ logo.jpg" alt="Brand Logo"></a>
+    <a href="#" class="logo"><img src="imag/logo.jpg" alt="Brand Logo"></a>
 
     <details class="category-dropdown">
         <summary>All</summary>
@@ -34,12 +34,12 @@
 
     <nav>
        <ul class="navibar" id="navbar">
-        <li><a href="/index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
-        <li><a href="/shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
-        <li><a href="/about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
-        <li><a href="/contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
-        <li><a href="/sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
-        <li id="lg-bag"><a href="/cart.html"><i class="fa fa-shopping-basket"></i></a></li>
+        <li><a href="index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a></li>
+        <li><a href="shop.html"><i class="fa fa-shopping-cart"></i><span>Shop</span></a></li>
+        <li><a href="about.html"><i class="fa fa-info-circle"></i><span>About</span></a></li>
+        <li><a href="contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a></li>
+        <li><a href="sign.html"><i class="fa fa-user"></i><span>Sign</span></a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa fa-shopping-basket"></i></a></li>
         <li><i class="fa fa-times-circle" id="close"></i></li>
       </ul>
     </nav>
@@ -395,7 +395,7 @@
 <!-- Footer -->
 <footer>
     <div class="col">
-        <img src="/imag/ logo.jpg" alt="logo" class="footer-logo">
+        <img src="imag/logo.jpg" alt="logo" class="footer-logo">
         <p>Crafted for a smooth shopping experience.<br>Designed to be fast, responsive, and user-friendly.</p>
         <div class="follow">
             <div class="icon">
@@ -457,56 +457,11 @@
 
 
 
-const productContainer=document.getElementById('productContainer');
-
-function renderProducts(filter="all"){
-    productContainer.innerHTML='';
-    const filtered=filter==="all"?products:products.filter(p=>p.category===filter);
-    filtered.forEach(p=>{
-        const div=document.createElement('div');
-        div.className="product";
-        div.innerHTML=`
-        <a href="#">
-            <img src="${p.img}" alt="${p.name}">
-            <div class="des">
-                <h6>${p.name}</h6>
-                <div class="stars">
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i>
-                </div>
-                <div class="price-cart">
-                    <h4>₹${p.price}</h4>
-                    <a href="#" class="ai"><i class="fa fa-shopping-cart"></i></a>
-                </div>
-            </div>
-        </a>`;
-        productContainer.appendChild(div);
-    });
-    attachCartEvents();
-}
-
 function getCart(){return JSON.parse(localStorage.getItem('cart'))||[];}
 function saveCart(cart){localStorage.setItem('cart',JSON.stringify(cart));}
 function updateCartCount(){const el=document.getElementById('cart-count');if(el) el.textContent=getCart().length;}
-function addToCart(id){let cart=getCart();if(!cart.includes(id)) cart.push(id);saveCart(cart);updateCartCount();alert("Product added!");}
-function attachCartEvents(){
-    document.querySelectorAll('.fa-shopping-cart').forEach(ic=>{
-        const cartLink=ic.closest('.ai');
-        if(cartLink){
-            cartLink.addEventListener('click',e=>{
-                e.preventDefault();e.stopPropagation();
-                const productDiv=cartLink.closest('.product');
-                const index=[...productDiv.parentElement.children].indexOf(productDiv);
-                addToCart(products[index].id);
-            });
-        }
-    });
-}
-
-
 
 document.addEventListener('DOMContentLoaded',()=>{
-    renderProducts();
     const cartIcon=document.getElementById('lg-bag');
     if(cartIcon){
         const cartCount=document.createElement('span');
@@ -517,91 +472,87 @@ document.addEventListener('DOMContentLoaded',()=>{
         updateCartCount();
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-            document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-            btn.classList.add('active');
-            renderProducts(btn.dataset.filter);
-        });
-    });
-});
+    // Select all filter buttons and products
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allProducts = document.querySelectorAll('.product');
 
- // Select all filter buttons and products
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const products = document.querySelectorAll('.product');
+    // Category Filter Implementation
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove 'active' class from all buttons and add to the clicked one
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove 'active' class from all buttons and add to the clicked one
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
 
-      const filter = btn.getAttribute('data-filter');
-
-      products.forEach(product => {
-        // Show all products if 'all' is selected
-        if (filter === 'all') {
-          product.style.display = 'block';
-        } else {
-          // Show only products matching the filter, hide others
-          if (product.getAttribute('data-category') === filter) {
+        allProducts.forEach(product => {
+          // Show all products if 'all' is selected
+          if (filter === 'all') {
             product.style.display = 'block';
           } else {
-            product.style.display = 'none';
+            // Show only products matching the filter, hide others
+            if (product.getAttribute('data-category') === filter) {
+              product.style.display = 'block';
+            } else {
+              product.style.display = 'none';
+            }
           }
-        }
+        });
+        
+        // Reapply other filters after category change
+        applyAdditionalFilters();
       });
     });
-  });
 
-// ---------------- Myntra-style Filters ----------------
-const filterInputs = document.querySelectorAll('.filters input');
-const clearBtn = document.getElementById('clear-filters');
-const allProducts = document.querySelectorAll('.product');
+    // ---------------- Myntra-style Filters ----------------
+    const filterInputs = document.querySelectorAll('.filters input');
+    const clearBtn = document.getElementById('clear-filters');
 
-function applyFilters() {
-  let selectedPrice = document.querySelector("input[name='price']:checked")?.value;
-  let selectedSizes = [...document.querySelectorAll("input[name='size']:checked")].map(s=>s.value);
-  let selectedRating = document.querySelector("input[name='rating']:checked")?.value;
-  let activeCategory = document.querySelector(".filter-btn.active")?.dataset.filter || "all";
+    function applyAdditionalFilters() {
+      let selectedPrice = document.querySelector("input[name='price']:checked")?.value;
+      let selectedSizes = [...document.querySelectorAll("input[name='size']:checked")].map(s=>s.value);
+      let selectedRating = document.querySelector("input[name='rating']:checked")?.value;
+      let activeCategory = document.querySelector(".filter-btn.active")?.dataset.filter || "all";
 
-  allProducts.forEach(p => {
-    let price = parseInt(p.getAttribute("data-price"));
-    let size = p.getAttribute("data-size");
-    let rating = parseInt(p.getAttribute("data-rating"));
-    let category = p.getAttribute("data-category");
+      allProducts.forEach(p => {
+        let price = parseInt(p.getAttribute("data-price"));
+        let size = p.getAttribute("data-size");
+        let rating = parseInt(p.getAttribute("data-rating"));
+        let category = p.getAttribute("data-category");
 
-    let show = true;
+        let show = true;
 
-    // Category check (your existing buttons)
-    if (activeCategory !== "all" && category !== activeCategory) show = false;
+        // Category check (your existing buttons)
+        if (activeCategory !== "all" && category !== activeCategory) show = false;
 
-    // Price check
-    if (selectedPrice) {
-      let [min,max] = selectedPrice.split("-").map(Number);
-      if (price < min || price > max) show = false;
+        // Price check
+        if (selectedPrice) {
+          let [min,max] = selectedPrice.split("-").map(Number);
+          if (price < min || price > max) show = false;
+        }
+
+        // Size check
+        if (selectedSizes.length > 0 && !selectedSizes.includes(size)) show = false;
+
+        // Rating check
+        if (selectedRating && rating < Number(selectedRating)) show = false;
+
+        p.style.display = show ? "block" : "none";
+      });
     }
 
-    // Size check
-    if (selectedSizes.length > 0 && !selectedSizes.includes(size)) show = false;
+    function applyFilters() {
+      applyAdditionalFilters();
+    }
 
-    // Rating check
-    if (selectedRating && rating < Number(selectedRating)) show = false;
-
-    p.style.display = show ? "block" : "none";
-  });
-}
-
-// Event listeners
-filterInputs.forEach(f => f.addEventListener("change", applyFilters));
-clearBtn.addEventListener("click", () => {
-  document.querySelectorAll(".filters input").forEach(f => f.checked = false);
-  applyFilters();
-});
-
-// Also reapply filters whenever category buttons are used
-document.querySelectorAll(".filter-btn").forEach(btn=>{
-  btn.addEventListener("click", applyFilters);
+    // Event listeners for additional filters
+    filterInputs.forEach(f => f.addEventListener("change", applyFilters));
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        document.querySelectorAll(".filters input").forEach(f => f.checked = false);
+        applyFilters();
+      });
+    }
 });
 
 

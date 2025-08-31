@@ -2793,6 +2793,47 @@ header.dark-mode {
     text-align: center;
     margin: 3rem 0 2rem 0;
 }
+
+.filter-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Filter Button Base Styles */
+.filter-btn {
+    background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+    border: none;
+    padding: 12px 24px;
+    margin: 0 8px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.filter-btn.active {
+    background: linear-gradient(145deg, #ff4b5c, #ff6b6b);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,75,92,0.4);
+}
+
 /* Optional: Ripple Animation on Click */
 .filter-btn::after {
     content: "";
