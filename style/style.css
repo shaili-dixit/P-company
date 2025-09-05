@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: Courier, monospace;
 }
+body{
+  height: 100%;
+  width: 100%;
+    overflow-x: hidden;
+}
 .header {
     width: 100%;
     display: flex;
@@ -200,8 +205,7 @@ nav {
     list-style: none;
     justify-content: space-between;
 }
- 
- 
+
 .navibar li a {
     font-size: 20px;
     color: white;
@@ -219,6 +223,28 @@ nav {
    
     background-color: rgba(255, 219, 192, 0.549);
     border-radius: 5px;
+}
+
+@media (max-width:460px){
+    header.header{
+      justify-content: space-between;
+      padding: 10px !important;
+    }
+    input#searchInput{
+      margin-left: 0px;
+      width:190px
+    }
+    #mobile a i{
+      margin-right:0;
+    }
+    #mobile #bar{
+      margin-right:0;
+      margin-left: 0;
+    }
+    .logo img{
+      margin-left:10px;
+    }
+
 }
 
 details {
@@ -361,42 +387,121 @@ font-size: 18px;
 font-weight: 500;
 }
 
+/* Hero Section */
 #buy {
-     
-    width: 100%;
-    height: 100vh;
-    padding: 100px 0;
-    margin:0;
-    background-size: cover;
-     background-image: url('https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_20website_20cost.png?format=jpg&quality=90&v=1680107890&width=1024');
-    background-position: bottom 25% right 0;
+  width: 100%;
+  min-height: 100vh; /* full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 0;
+  background-image: url('https://cdn.shopify.com/s/files/1/0070/7032/files/ecommerce_20website_20cost.png?format=jpg&quality=90&v=1680107890&width=1024');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
 
-    font-size: 40px;
-    opacity: 0.8;
-    background-repeat: no-repeat;
-    background-attachment:static;
-  
+/* Overlay for better text readability */
+#buy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 18, 5, 0.7);
+  z-index: 1;
 }
-#buy h2{
-margin: 20px 35%;
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
 }
-#buy a{
-    text-decoration: none;
+
+/* Typography */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
-#buy button {
-    width: 200px;
-    height: 50px;
-     
-    font-size: 30px;
-    text-align: center;
-    margin: 20% 40%; /* Adjust margin for centering */
-    background-color:rgb(206, 214, 214);
-    display: block; /* Make it a block element for centering */
-    border-radius: 5px;
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
-#buy button:hover{
-    background-color:#088178;
+
+.hero-urgency {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #ffcc00;
 }
+
+/* Call To Action Button */
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #088178;
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.cta-btn i {
+  margin-right: 8px;
+}
+
+.cta-btn:hover {
+  background: #06a085;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-urgency {
+    font-size: 1.5rem;
+  }
+  .cta-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-urgency {
+    font-size: 1.2rem;
+  }
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  #buy{
+    padding: 0;
+  }
+}
+
 #feature {
     display: flex;
     align-items: center;
@@ -583,20 +688,28 @@ margin: 20px 35%;
 }
 #product1 .product{
     width: 23%;
-    /* min-width:230px; */
-    height: 5%;
+    min-width:230px;
+    height: max-content;
     font-size: 20px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 5px 10px;
     border-radius: 30px;
-    /* border-radius: 50px solid rgba(255, 255, 255, 0.391); */
+    border-radius: 50px solid rgba(255, 255, 255, 0.391);
 
     box-shadow: 3px 3px 3px 3px rgba(226, 210, 210, 0.475);
     margin: 25px 20px;
 }
-#product1 h2{
-    font-size: 40px;
-    background-color: aqua;
+#product1 h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #222;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
 }
 #product1 .product a{
     text-decoration: none;
@@ -608,7 +721,7 @@ margin: 20px 35%;
     border-radius: 20px;
 }
 #product1 .product  .des{
-    text-align: start;
+    text-align: center;
 }
 #product1 .product  .des h6{
     font-size: 16px;
@@ -630,6 +743,31 @@ color: rgba(255, 217, 0, 0.858);
 #product1 .product a .des h4{
     font-size: 15px;
     font-weight: 800;
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #product1 h2 {
+    font-size: 1.8rem;
+  }
+  #product1 .product img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  #product1 h2 {
+    font-size: 1.5rem;
+  }
+  #product1 .product img {
+    height: 200px;
+  }
 }
 #banner{
 margin: 40px 0;
@@ -671,16 +809,18 @@ button:hover{
     font-weight: 500;
 }
 #sm-banner{
-    display: flex;
+    /* display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-    height: 100vh;
-   background-color: rgb(255, 251, 234);
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-    margin-top: 100px;
-    margin-bottom: 60px;
-    /* width: 100%; */
-    /* flex-wrap: wrap; */
+    align-items: flex-start; */
+    /* height: 100vh; */
+    height: max-content;
+    background-color: rgb(255, 251, 234);
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    margin:100px auto 60px;
+    /* padding: 0 20px; */
+    /* width: max-content; */
+    flex-wrap: wrap; 
 }
 #sm-banner .top-container{
     width: 100%;
@@ -689,6 +829,11 @@ button:hover{
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
+}
+.ban-content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .top-container .content{
     width: 100%;
@@ -716,7 +861,7 @@ button:hover{
     height: 60px;
     object-fit: cover;
 }
-#sm-banner .banner-box:nth-child(2){
+#sm-banner .banner-box:nth-child(1){
 display: flex;
 font-size: 40px;
 flex-direction: column;
@@ -726,7 +871,7 @@ height: 40vh;
 background-size: cover;
 background-image: url(https://static.vecteezy.com/system/resources/previews/027/550/118/non_2x/girl-with-shopping-bag-free-photo.jpg);
 }
-#sm-banner .banner-box:nth-child(3){
+#sm-banner .banner-box:nth-child(2){
 display: flex;
 font-size: 40px;
 flex-direction: column;
@@ -738,7 +883,7 @@ background-image: url(https://static.vecteezy.com/system/resources/previews/017/
 height: 40vh;
 background-size: cover;
 }
-#sm-banner .banner-box:nth-child(4){
+#sm-banner .banner-box:nth-child(3){
    
     display: flex;
     font-size: 40px;
@@ -749,6 +894,10 @@ background-size: cover;
     height: 40vh;
     opacity: 0.9;
     background-size: cover;
+    }
+
+    .banner-box{
+      min-width: 270px;
     }
 #sm-banner h4{
     font-size:30px;
@@ -774,13 +923,21 @@ background-size: cover;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width:max-content;
+    margin: auto;
    
    /* width: 100%; */
 }
+@media (max-width:400px){
+  #banner-3{
+    width: min-content !important;
+  }
+  #sm-banner{
+    width: min-content !important;
+  }
+}
 #banner-3 .banner-box{
-   
     display: flex;
-    
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
